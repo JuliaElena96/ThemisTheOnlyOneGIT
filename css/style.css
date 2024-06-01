@@ -6,20 +6,24 @@
 
 
 :root {
-    --navbar-height: 220px; /* Definieren Sie eine Variable für die Höhe */
+    --navbar-height: 220px;
+    /* Definieren Sie eine Variable für die Höhe */
 }
-.n_top{
+
+.n_top {
     width: 100%;
-    height: 225px; 
+    height: 225px;
 
 }
+
 #logo {
     position: fixed;
     top: 10px;
     left: 20px;
-    width:300px ;
+    width: 300px;
     height: var(--navbar-height);
-    object-fit: contain; /* Seitenverhältnis beibehalten */
+    object-fit: contain;
+    /* Seitenverhältnis beibehalten */
     margin-right: 30px;
 
 }
@@ -29,35 +33,44 @@
     top: 10px;
     left: 360px;
     width: calc(100% - 370px);
-    height: var(--navbar-height); 
+    height: var(--navbar-height);
     display: flex;
     align-items: center;
-   
-    
-    
+
+
+
 }
+
 .navContainer ul {
     display: flex;
-    flex-wrap: wrap; /* Erlaubt den Listenelementen, in mehrere Zeilen umzubrechen, wenn der Platz nicht ausreicht */
+    flex-wrap: wrap;
+    /* Erlaubt den Listenelementen, in mehrere Zeilen umzubrechen, wenn der Platz nicht ausreicht */
     padding: 0;
     margin: 0;
     list-style-type: none;
-   
 
-    
+
+
 }
 
 .navContainer ul li {
-    width: auto; /* Setzen Sie die Breite der Listenelemente auf auto, damit sie ihren Inhalt vollständig anzeigen können */
-    overflow: hidden; /* Verhindert, dass der Text über das Listenelement hinausgeht */
-    text-overflow: ellipsis; /* Fügt "..." hinzu, wenn der Text abgeschnitten wird */
-    white-space: nowrap; /* Verhindert, dass der Text umbricht */
+    width: auto;
+    /* Setzen Sie die Breite der Listenelemente auf auto, damit sie ihren Inhalt vollständig anzeigen können */
+    overflow: hidden;
+    /* Verhindert, dass der Text über das Listenelement hinausgeht */
+    text-overflow: ellipsis;
+    /* Fügt "..." hinzu, wenn der Text abgeschnitten wird */
+    white-space: nowrap;
+    /* Verhindert, dass der Text umbricht */
 }
 
 #navlist {
-    display: flex; /* Zeigt die Listenelemente nebeneinander an */
-    justify-content: flex-start; /* Listenelemente beginnen auf der linken Seite */
-    align-items: center; /* Zentriert die Listenelemente vertikal */
+    display: flex;
+    /* Zeigt die Listenelemente nebeneinander an */
+    justify-content: flex-start;
+    /* Listenelemente beginnen auf der linken Seite */
+    align-items: center;
+    /* Zentriert die Listenelemente vertikal */
     background: rgb(255, 255, 255);
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(156, 4, 51, 1) 100%);
     border-radius: 10px;
@@ -67,8 +80,8 @@
     width: calc(100% - 130px);
     padding-left: 0px;
 
-    
-    
+
+
 
 }
 
@@ -85,7 +98,7 @@
 #navlist li {
     float: left;
     margin-right: 10px;
-   
+
 }
 
 
@@ -128,18 +141,48 @@
     padding-top: 10px;
     font-size: 20px;
 
-   
+
 }
-.welcome h1{
+
+.welcome h1 {
     margin: 0px;
     padding: 0px;
+
+}
+
+.addCustomer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    visibility: hidden;
     
+
+}
+
+.addCustomer button {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-left: 50px;
+}
+
+.addCustomer button span {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+
 }
 
 .suchcontainer {
     width: 50%;
     margin: auto;
     visibility: hidden;
+    
 }
 
 .suchcontainer p {
@@ -152,7 +195,7 @@
     float: left;
     margin: 0px;
     padding-right: 30px;
-   
+    margin-bottom: 30px;
 
 }
 
@@ -160,15 +203,18 @@
     border-radius: 10px;
     border: 1px solid black;
     height: 30px;
-   
+
     padding-inline-start: 10px;
 }
-hr{
+
+hr {
+
     clear: both;
     width: 80%;
-    margin: auto;
+    margin: 30px auto;
     color: #241c23;
-    
+
+
 }
 
 button {
@@ -179,6 +225,7 @@ button {
     padding: 7px 30px;
     transition-duration: 0.3s;
 }
+
 button:hover {
     background-color: #241c23;
     color: white;
@@ -186,8 +233,10 @@ button:hover {
 
 #kundentabelle {
     display: block;
-    margin: 50px auto; /* Zentriert die Tabelle horizontal */
-    width: 80%; /* Breite der Tabelle (kann angepasst werden) */
+    margin: 50px auto;
+    /* Zentriert die Tabelle horizontal */
+    width: 80%;
+    /* Breite der Tabelle (kann angepasst werden) */
     border-collapse: collapse;
     visibility: hidden;
 
@@ -209,8 +258,14 @@ td {
     text-align: left;
     padding: 8px;
     width: 250px;
-   
+
 }
+
+#tabellenContainer {}
+
+
+
+
 /* 
 @media screen and (max-width: 600px) {
     #logo {

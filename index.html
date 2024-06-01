@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/05dca2dd9b.js" crossorigin="anonymous"></script>
     
     
     
@@ -21,7 +22,7 @@
 <body>
     <div class="n_top">
         <div class="navContainer">
-            <img id="logo" src="LogoCutted.png" alt="Themis Logo">
+            <img id="logo" src="pic/LogoCutted.png" alt="Themis Logo">
             <ul id="navlist">
                 <li><a id="kunde" href="#" onclick="einblenden(), ausblenden()">Kunde</a></li>
                 <li><a href="news.asp">Verträge</a></li>
@@ -37,11 +38,18 @@
             Hier können Sie Ihre Kunden verwalten,
             Verträge anlegen und verwalten und Wiedervorlagen erstellen.</p>
     </div>
+    <div class="addCustomer" id="addCustomer" >
+        <h1>Kunde hinzufügen</h1> 
+        
+        <button class="submit" ">
+            <span class="fa-solid fa-user-plus"></span>
+        </button>
+    </div>
 
     <div class="suchcontainer" id="suchcontainer">
         <div class="innerSuchContainer">
             <h1>Kundensuche</h1>
-            <form id="formSearch" action="dbManager.php" method="post"> 
+            <form id="formSearch" action="php/dbManager.php" method="post"> 
                 <!--target="_self" evtl noch einfügen heißt bleibt im gleichen 
                     fenster und post statt get nehmen da get das ergebnis im url ausgibt und post somit besser für senible daten is--> 
                 <div class="eingabefeld">
@@ -66,8 +74,13 @@
                 </div>
             </form>
         </div>
+              
     </div>
-    <hr>
+
+    <hr> 
+    
+    
+    
     
 
     <div id="tabellenContainer">
@@ -96,5 +109,6 @@
     <script src="js/navbar.js"></script>
     <script src="js/table.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/addCustomer.js"></script>
 
 </html>

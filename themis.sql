@@ -274,7 +274,7 @@ create table if not exists hat(
 
 INSERT INTO Kunden (titel, nname, vname, geb, sozialvnr, famstand, tel, email, plz, ort, str, wohnart, beruf)
 VALUES 
-    (NULL, 'Mustermann', 'Max', '1996-11-09', '5052 091196', 'ledig', '06761234567', 'max.mustermann@example.com', '1010', 'Wien', 'Stephansplatz 1', 'Wohnung', 'Student'),
+    (NULL, 'Mustermann', 'Matthias', '1996-11-09', '5052 091196', 'ledig', '06761234567', 'max.mustermann@example.com', '1010', 'Wien', 'Stephansplatz 1', 'Wohnung', 'Student');
     ('Dr.', 'Müller', 'Anna', '1985-05-21', '3034 210585', 'verheiratet', '066012345678', 'anna.mueller@example.com', '4020', 'Linz', 'Hauptstraße 10', 'Eigentumshaus', 'Ärztin'),
     (NULL, 'Schmidt', 'Julia', '1978-09-15', '4012 150978', 'verheiratet', '069912345678', 'julia.schmidt@example.com', '5020', 'Salzburg', 'Mozartgasse 5', 'Wohnung', 'Lehrerin'),
     (NULL, 'Wagner', 'Markus', '1990-03-30', '8013 300390', 'ledig', '067612345678', 'markus.wagner@example.com', '8020', 'Graz', 'Hauptplatz 3', 'Wohnung', 'Informatiker'),

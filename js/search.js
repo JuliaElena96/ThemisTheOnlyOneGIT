@@ -22,7 +22,7 @@ function formSearchSubmit(event) {
         vname: $vnameEl.value,
         plz: $plzEl.value,
         ort: $ortEl.value
-        };
+    };
 
     //Objekt in einen Sting im JSON-Format umwandeln
     console.log(`formSearchSubmit ${JSON.stringify(sendData)}`);
@@ -31,30 +31,31 @@ function formSearchSubmit(event) {
     //
     function receiveJsonData(dataObj) {
         console.log(`receiveJsonData : ${JSON.stringify(dataObj)}`);
-        
-        console.log("Nachname: ", dataObj[0]);
-        console.log("Suche einträge gefunden", dataObj.length );
+        console.log(`receiveJsonData Length : ${dataObj.length}`);
 
-        seperateValues(dataObj);
-        //AddRow(dataObj);
-        //showErgebnis(dataObj);                
+        removeTableRows();
+        for (let i = 0; i < dataObj.length; i++) {
+            seperateValues(dataObj[i]);
+        }
+
+
+
+        // console.log("Nachname: ", dataObj[0]);
+        //console.log("Suche einträge gefunden", dataObj.length );                
     }
 
     function receiveTextData(dataText) {
         console.log(`receiveTextData : ${dataText}`);
         dataObj = JSON.parse(dataText);
-        
+
     }
     function receiveError(error) {
-        console.error(`Error: ${error}`);
+        //console.error(`Error: ${error}`);
+        removeTableRows();
+        
     }
 
-    /*function showErgebnis(dataObj) {
-        document.getElementById("nnameAusgabe").textContent = dataObj[0].nname;
-        document.getElementById("vnameAusgabe").textContent = dataObj[0].vname;
-        document.getElementById("plzAusgabe").textContent = dataObj[0].plz;
-        document.getElementById("ortAusgabe").textContent = dataObj[0].ort;
-    }*/
+
 
 
 }

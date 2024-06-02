@@ -142,6 +142,7 @@
     font-size: 20px;
 
 
+
 }
 
 .welcome h1 {
@@ -157,7 +158,7 @@
     width: 50%;
     margin: auto;
     visibility: hidden;
-    
+
 
 }
 
@@ -182,7 +183,7 @@
     width: 50%;
     margin: auto;
     visibility: hidden;
-    
+
 }
 
 .suchcontainer p {
@@ -197,9 +198,19 @@
     padding-right: 30px;
     margin-bottom: 30px;
 
+    
+
+
 }
 
 .eingabefeld input {
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 30px;
+    padding-inline-start: 10px;
+}
+
+.eingabefeld select {
     border-radius: 10px;
     border: 1px solid black;
     height: 30px;
@@ -262,6 +273,70 @@ td {
 }
 
 #tabellenContainer {}
+
+.kundenansicht {
+    border: none;
+  }
+#titelAddCustomer {
+    margin-left: 330px;
+    width: 72%;
+    visibility: hidden;
+    
+}
+
+
+.addCustomerContainer {
+    width: 70%;
+    height: 450px;
+    margin-left: 330px;
+    padding: 20px;
+    display: inline-block;
+    justify-content: center;
+    align-items: top;
+    position: relative;
+    visibility: hidden;
+
+ 
+}
+
+.addCustomerContainer button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+}
+
+.innerAddCustomerContainer {
+    height: 420px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+
+
+.notiz {
+    position: absolute;
+    right: 30px;
+    bottom: 50px;
+    float: left;
+    margin: 0px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+
+    
+}
+
+.notiz input {
+    border-radius: 10px;
+    height: 180px;
+    width: 300px; 
+    padding-inline-start: 10px;
+    border: 1px solid black;
+}
 
 
 

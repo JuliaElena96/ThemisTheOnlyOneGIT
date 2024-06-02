@@ -12,9 +12,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/05dca2dd9b.js" crossorigin="anonymous"></script>
-    
-    
-    
+
+
+
 
     <title>Themis</title>
 </head>
@@ -38,10 +38,10 @@
             Hier können Sie Ihre Kunden verwalten,
             Verträge anlegen und verwalten und Wiedervorlagen erstellen.</p>
     </div>
-    <div class="addCustomer" id="addCustomer" >
-        <h1>Kunde hinzufügen</h1> 
-        
-        <button class="submit" ">
+    <div class="addCustomer" id="addCustomer">
+        <h1>Kunde hinzufügen</h1>
+
+        <button class="submit" onclick="ausblendenFürAddCustomer(), einblendenAddCustomerContainer()">
             <span class="fa-solid fa-user-plus"></span>
         </button>
     </div>
@@ -49,9 +49,9 @@
     <div class="suchcontainer" id="suchcontainer">
         <div class="innerSuchContainer">
             <h1>Kundensuche</h1>
-            <form id="formSearch" action="php/dbManager.php" method="post"> 
+            <form id="formSearch" action="php/dbManager.php" method="post">
                 <!--target="_self" evtl noch einfügen heißt bleibt im gleichen 
-                    fenster und post statt get nehmen da get das ergebnis im url ausgibt und post somit besser für senible daten is--> 
+                    fenster und post statt get nehmen da get das ergebnis im url ausgibt und post somit besser für senible daten is-->
                 <div class="eingabefeld">
                     <input type="text" id="nname" name="nname"> <br>
                     <label for="nname">Nachname</label>
@@ -70,45 +70,175 @@
                     <label for="ort">Ort</label>
                 </div>
                 <div class="eingabefeld">
-                    <button class="submit" type="submit" value="Suchen" onclick="einblendenKundentabelle()">Suchen</button>
+                    <button class="submit" type="submit" value="Suchen"
+                        onclick="einblendenKundentabelle()">Suchen</button>
                 </div>
             </form>
         </div>
-              
+
     </div>
 
-    <hr> 
-    
-    
-    
-    
+    <div id="titelAddCustomer">
+        <h2>Kundendaten eingeben</h2>
+    </div>
+
+    <div class="addCustomerContainer" id="addCustomerContainer">
+        <div class="innerAddCustomerContainer" id="innerAddCustomerContainer">
+
+            <form id="formAddCustomer" action="php/addCustomer.php" method="post">
+                <div>
+                    <table class="kundenansicht">
+
+                        <tr class="kundenansicht">
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <select type="text" id="anrede" name="anrede">
+                                        <option value="">Bitte auswählen</option>
+                                        <option value="herr">Herr</option>
+                                        <option value="frau">Frau</option>
+                                        <option value="divers">Divers</option>
+                                    </select><br>
+                                    <label for="famstand">Anrede</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="titel" name="titel" placeholder="Mag."> <br>
+                                    <label for="titel">Titel</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="str" name="str" placeholder="Musterstraße 1"> <br>
+                                    <label for="str">Straße</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <select type="text" id="famstand" name="famstand">
+                                        <option value="">Bitte auswählen</option>
+                                        <option value="ledig">ledig</option>
+                                        <option value="verheiratet">verheiratet</option>
+                                        <option value="geschieden">geschieden</option>
+                                        <option value="verwitwet">verwitwet</option>
+                                    </select><br>
+                                    <label for="famstand">Familienstand</label>
+                                </div>
+                            </th>
+                        </tr class="kundenansicht">
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <input type="text" id="nname" name="nname" placeholder="Mustermann"> <br>
+                                <label for="nname">Nachname</label>
+                            </div>
+                        </th>
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <input type="text" id="vname" name="vname" placeholder="Max"> <br>
+                                <label for="vname">Vorname</label>
+                            </div>
+                        </th>
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <input type="number" id="sozialvnr" name="sozialvnr" placeholder="1020"> <br>
+                                <label for="sozialvnr">PLZ</label>
+                            </div>
+                        </th>
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <select type="text" id="wohnart" name="wohnart">
+                                    <option value="">Bitte auswählen</option>
+                                    <option value="miete">Miete</option>
+                                    <option value="eigentum">Eigentum</option>
+                                    <option value="pacht">Pacht</option>
+                                </select><br>
+                                <label for="famstand">Wohnart</label>
+                            </div>
+                        </th>
+
+                        <tr class="kundenansicht">
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="date" id="geb" name="geb"> <br>
+                                    <label for="geb">Geburtstag</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="number" id="sozialvnr" name="sozialvnr" placeholder="1020"> <br>
+                                    <label for="sozialvnr">Sozialversicherungsnummer</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="ort" name="ort" placeholder="Wien"> <br>
+                                    <label for="ort">Ort</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="kundenansicht">
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="tel" id="tel" name="tel" placeholder="+4306601234567"> <br>
+                                    <label for="tel">Teleofonnummer</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at"> <br>
+                                    <label for="email">E-Mail</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="bankkonto" name="bankkonto"
+                                        placeholder="AT20 1234 1234 1234"> <br>
+                                    <label for="bankkonto">Bankkonto</label>
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div class="notiz">
+                    <label for="notiz">Zusätzliche Information</label><br>
+                    <input type="text" id="notiz" name="notiz">
+                </div>
+
+
+            </form>
+
+        </div>
+        <button class="submit" type="submit" onclick="addCustomerInDB()">Speichern</button>
+    </div>
+
+    <hr>
 
     <div id="tabellenContainer">
-       <!-- <p id="nnameAusgabe"></p>
-        <p id="vnameAusgabe"></p>
-        <p id="plzAusgabe"></p>
-        <p id="ortAusgabe"></p>
-    -->
         <table id="kundentabelle">
-            
-                <tr>
-                    <th>Nachname</th>
-                    <th>Vorname</th>
-                    <th>Geburtsdatum</th>
-                    <th>PLZ</th>
-                    <th>Ort</th>
-                    <th>Straße</th>
-                </tr>
-            
+
+            <tr>
+                <th>Nachname</th>
+                <th>Vorname</th>
+                <th>Geburtsdatum</th>
+                <th>PLZ</th>
+                <th>Ort</th>
+                <th>Straße</th>
+            </tr>
+
         </table>
-       
+
     </div>
 
+
+
+
 </body>
-    <script src="js/myFetch.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/table.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/addCustomer.js"></script>
+<script src="js/myFetch.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/table.js"></script>
+<script src="js/search.js"></script>
+<script src="js/addCustomer.js"></script>
 
 </html>

@@ -19,7 +19,7 @@ function ausblendenFürAddCustomer(){
     $(".addCustomer").hide();
     document.getElementById("suchcontainer").style.visibility = "hidden";
     $(".suchcontainer").hide();
-
+   
 }
 
 function einblendenAddCustomerContainer(){

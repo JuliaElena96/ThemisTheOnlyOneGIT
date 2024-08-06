@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>680fbd8d-49a5-4ff1-9617-89aca077205c</OriginalElement>
+  <nodes>
+    <node x="471.0" y="-102.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.notizen</node>
+    <node x="638.0" y="-74.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.leben</node>
+    <node x="732.0" y="332.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.unfall</node>
+    <node x="65.0" y="612.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.besitzt</node>
+    <node x="982.0" y="486.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kasko</node>
+    <node x="813.0" y="-172.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haushalt</node>
+    <node x="65.0" y="-172.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.t_gesellschaft</node>
+    <node x="233.0" y="332.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.eigenheim</node>
+    <node x="529.0" y="472.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat</node>
+    <node x="-137.0" y="-242.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kunden</node>
+    <node x="1053.0" y="-242.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg</node>
+    <node x="1442.0" y="360.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.rechtsschutz</node>
+    <node x="1284.0" y="-340.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kfz</node>
+    <node x="1231.0" y="542.0">680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haftpflicht</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kfz" relationship="REFERENCES">
+      <point x="65.57142857142857" y="-185.0" />
+      <point x="671.0714285714286" y="322.0" />
+      <point x="1368.5" y="322.0" />
+      <point x="0.0" y="311.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.eigenheim" relationship="REFERENCES">
+      <point x="-76.5" y="-0.0" />
+      <point x="123.0" y="-0.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.notizen" relationship="REFERENCES">
+      <point x="-65.57142857142858" y="-185.0" />
+      <point x="539.9285714285714" y="282.0" />
+      <point x="573.75" y="282.0" />
+      <point x="34.25" y="73.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kasko" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="-54.75" y="-171.0" />
+      <point x="1036.75" y="312.0" />
+      <point x="1545.0" y="312.0" />
+      <point x="1545.0" y="292.0" />
+      <point x="1143.5" y="292.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haftpflicht" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="0.0" y="-115.0" />
+      <point x="1321.5" y="312.0" />
+      <point x="1545.0" y="312.0" />
+      <point x="1545.0" y="292.0" />
+      <point x="1143.5" y="292.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.notizen" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.t_gesellschaft" relationship="REFERENCES">
+      <point x="-34.25" y="-73.0" />
+      <point x="505.25" y="-187.0" />
+      <point x="222.5" y="-187.0" />
+      <point x="52.5" y="-143.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.leben" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="0.0" y="-45.0" />
+      <point x="710.5" y="-257.0" />
+      <point x="1075.625" y="-257.0" />
+      <point x="-67.875" y="-213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.unfall" relationship="REFERENCES">
+      <point x="76.5" y="-0.0" />
+      <point x="-110.0" y="-0.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.t_gesellschaft" relationship="REFERENCES">
+      <point x="67.875" y="-213.0" />
+      <point x="1211.375" y="-287.0" />
+      <point x="117.5" y="-287.0" />
+      <point x="-52.5" y="-143.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.besitzt" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kunden" relationship="REFERENCES">
+      <point x="-68.0" y="-15.0" />
+      <point x="-123.33333333333333" y="642.0" />
+      <point x="-72.33333333333333" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="0.0" y="-185.0" />
+      <point x="605.5" y="312.0" />
+      <point x="1545.0" y="312.0" />
+      <point x="1545.0" y="292.0" />
+      <point x="1143.5" y="292.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haushalt" relationship="REFERENCES">
+      <point x="21.85714285714286" y="-185.0" />
+      <point x="627.3571428571429" y="292.0" />
+      <point x="908.0" y="292.0" />
+      <point x="0.0" y="143.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.besitzt" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="-68.0" y="-0.0" />
+      <point x="-154.5" y="657.0" />
+      <point x="-154.5" y="-357.5" />
+      <point x="1226.375" y="-357.5" />
+      <point x="82.875" y="-213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.rechtsschutz" relationship="REFERENCES">
+      <point x="-51.0" y="185.0" />
+      <point x="554.5" y="1012.0" />
+      <point x="1545.0" y="1012.0" />
+      <point x="0.0" y="297.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.eigenheim" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haushalt" relationship="REFERENCES">
+      <point x="61.5" y="-325.0" />
+      <point x="417.5" y="292.0" />
+      <point x="908.0" y="292.0" />
+      <point x="0.0" y="143.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haftpflicht" relationship="REFERENCES">
+      <point x="0.0" y="185.0" />
+      <point x="605.5" y="1002.0" />
+      <point x="1321.5" y="1002.0" />
+      <point x="0.0" y="115.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kasko" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kfz" relationship="REFERENCES">
+      <point x="54.75" y="-171.0" />
+      <point x="1146.25" y="322.0" />
+      <point x="1368.5" y="322.0" />
+      <point x="0.0" y="311.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.haushalt" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="95.0" y="-0.0" />
+      <point x="-90.5" y="-0.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.t_gesellschaft" relationship="REFERENCES">
+      <point x="-21.85714285714286" y="-185.0" />
+      <point x="583.6428571428571" y="302.0" />
+      <point x="170.0" y="302.0" />
+      <point x="0.0" y="143.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kunden" relationship="REFERENCES">
+      <point x="-43.71428571428572" y="-185.0" />
+      <point x="561.7857142857142" y="322.0" />
+      <point x="-108.33333333333333" y="322.0" />
+      <point x="-57.33333333333333" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.rechtsschutz" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="0.0" y="-297.0" />
+      <point x="1545.0" y="292.0" />
+      <point x="1143.5" y="292.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.eigenheim" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="-61.5" y="-325.0" />
+      <point x="294.5" y="312.0" />
+      <point x="1545.0" y="312.0" />
+      <point x="1545.0" y="292.0" />
+      <point x="1143.5" y="292.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.unfall" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="0.0" y="-325.0" />
+      <point x="842.0" y="312.0" />
+      <point x="1545.0" y="312.0" />
+      <point x="1545.0" y="292.0" />
+      <point x="1143.5" y="292.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.leben" relationship="REFERENCES">
+      <point x="43.714285714285715" y="-185.0" />
+      <point x="649.2142857142857" y="302.0" />
+      <point x="710.5" y="302.0" />
+      <point x="0.0" y="45.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.notizen" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="34.25" y="-73.0" />
+      <point x="573.75" y="-267.0" />
+      <point x="1120.875" y="-267.0" />
+      <point x="-22.625" y="-213.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.hat" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kasko" relationship="REFERENCES">
+      <point x="51.0" y="185.0" />
+      <point x="656.5" y="992.0" />
+      <point x="1091.5" y="992.0" />
+      <point x="0.0" y="171.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kfz" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.vertrag_allg" relationship="REFERENCES">
+      <point x="-84.5" y="-0.0" />
+      <point x="90.5" y="-0.0" />
+    </edge>
+    <edge source="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.notizen" target="680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.kunden" relationship="REFERENCES">
+      <point x="-34.25" y="73.0" />
+      <point x="505.25" y="209.0" />
+      <point x="-51.0" y="209.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.4997229916897507" showDependencies="false" x="755.5" y="336.0" />
+  <SelectedNodes>
+    <node>680fbd8d-49a5-4ff1-9617-89aca077205c.TABLE:themis.besitzt</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

@@ -13,6 +13,11 @@ function einblendenKundentabelle(){
     document.getElementById("kundentabelle").style.visibility = "visible";
     $("#kundentabelle").show();
 }
+function ausblendenKundentabelle(){
+    document.getElementById("kundentabelle").style.visibility = "hidden";
+    $("#kundentabelle").hide();
+
+}
 
 function ausblendenFürAddCustomer(){
     document.getElementById("addCustomer").style.visibility = "hidden";
@@ -28,4 +33,5 @@ function einblendenAddCustomerContainer(){
     document.getElementById("titelAddCustomer").style.visibility = "visible";
     $(".titelAddCustomer").show();
 }
+
 

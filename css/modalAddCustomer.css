@@ -1,0 +1,85 @@
+.ModalAddCustomer {
+    border-radius: 10px;
+    padding-top: 0px;
+    height: 60%;
+    width: 55%;
+    text-align: center;
+}
+
+.btnContainer {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+
+}
+
+.btnModal,
+.btnModalCancel {}
+
+select{
+    width: 190px;
+}
+
+select,
+input {
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    font-size: 15px;
+    
+}
+input{
+    padding-left: 10px;
+}
+
+label {
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.trModalAddCustomer,
+.thModalAddCustomer,
+.tableModalAddCustomer {
+    border-collapse: separate;
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 30px;
+    border: none;
+    width: auto;
+    height: auto;
+    text-align: left;
+
+
+}
+
+.trModalAddCustomer {
+    padding-left: 25px;
+}
+
+#tuernr {
+    width: 120px;
+}
+
+
+.notiz {
+    position: absolute;
+    right: 30px;
+    bottom: 70px;
+    float: left;
+    margin: 0px;
+    padding-right: 50px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.notiz textarea {
+    border-radius: 10px; /* Abgerundete Ecken */
+    height: 125px;
+    width: 505px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: left; /* Text links ausrichten */
+    vertical-align: top; /* Text oben ausrichten */
+    resize: none; /* Optional: Deaktiviert die Größenänderung */
+}

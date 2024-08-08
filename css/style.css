@@ -2,6 +2,9 @@
     font-family: "PT Sans", sans-serif;
 
 }
+body {
+    padding-top: var(--navbar-height);
+}
 
 
 
@@ -10,10 +13,13 @@
     /* Definieren Sie eine Variable für die Höhe */
 }
 
-.n_top {
+.n_top {    
     width: 100%;
-    height: 225px;
-
+    height: 230px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 #logo {
@@ -36,6 +42,8 @@
     height: var(--navbar-height);
     display: flex;
     align-items: center;
+    
+   
 
 
 
@@ -48,7 +56,7 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
-
+  
 
 
 }
@@ -62,6 +70,7 @@
     /* Fügt "..." hinzu, wenn der Text abgeschnitten wird */
     white-space: nowrap;
     /* Verhindert, dass der Text umbricht */
+    
 }
 
 #navlist {
@@ -93,6 +102,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    
 }
 
 #navlist li {
@@ -140,6 +150,7 @@
     padding-right: 30px;
     padding-top: 10px;
     font-size: 20px;
+    
 
 
 
@@ -183,7 +194,7 @@
     width: 50%;
     margin: auto;
     visibility: hidden;
-
+ 
 }
 
 .suchcontainer p {
@@ -195,11 +206,8 @@
 .eingabefeld {
     float: left;
     margin: 0px;
-    padding-right: 30px;
+    padding-right: 15px;
     margin-bottom: 30px;
-
-    
-
 
 }
 
@@ -285,82 +293,10 @@ td {
 }
 
 
-.addCustomerContainer {
-    width: 70%;
-    height: 450px;
-    margin-left: 330px;
-    padding: 20px;
-    display: inline-block;
-    justify-content: center;
-    align-items: top;
-    position: relative;
-    visibility: hidden;
-
- 
-}
-
-.addCustomerContainer button {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-
-}
-
-.innerAddCustomerContainer {
-    height: 420px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    overflow: auto;
-}
-
-
-
-.notiz {
-    position: absolute;
-    right: 30px;
-    bottom: 50px;
-    float: left;
-    margin: 0px;
-    padding-right: 30px;
-    margin-bottom: 30px;
-
-    
-}
-
-.notiz input {
-    border-radius: 10px;
-    height: 180px;
-    width: 300px; 
-    padding-inline-start: 10px;
-    border: 1px solid black;
-}
 
 
 
 
-/* 
-@media screen and (max-width: 600px) {
-    #logo {
-        width: 150px; 
-        height: 75px;
-        object-fit: cover; 
-    }
 
-    .navContainer {
-        left: 160px; 
-        width: calc(100% - 160px); 
-        height: 75px; 
-    }
-    .navContainer ul li {
-        font-size: 12px; 
-    }
 
-    th, td {
-        width: 100%; 
-        font-size: 14px; 
-    }
-}
-*/
+

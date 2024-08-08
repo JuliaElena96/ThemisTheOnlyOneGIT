@@ -1,0 +1,113 @@
+<div id="titelAddCustomer">
+        <h2>Kundendaten eingeben</h2>
+    </div>
+
+    <div class="addCustomerContainer" id="addCustomerContainer">
+        <div class="innerAddCustomerContainer" id="innerAddCustomerContainer">
+
+            <form id="formAddCustomer" action="php/addCustomer.php" method="post">
+                <div>
+                    <table class="kundenansicht">
+
+                        <tr class="kundenansicht">
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <select type="text" id="anrede" name="anrede">
+                                        <option value="">Bitte auswählen</option>
+                                        <option value="herr">Herr</option>
+                                        <option value="frau">Frau</option>
+                                        <option value="divers">Divers</option>
+                                    </select><br>
+                                    <label for="famstand">Anrede</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="titel" name="titel" placeholder="Mag."> <br>
+                                    <label for="titel">Titel</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="str" name="str" placeholder="Musterstraße 1"> <br>
+                                    <label for="str">Straße</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <select type="text" id="famstand" name="famstand">
+                                        <option value="">Bitte auswählen</option>
+                                        <option value="ledig">ledig</option>
+                                        <option value="verheiratet">verheiratet</option>
+                                        <option value="geschieden">geschieden</option>
+                                        <option value="verwitwet">verwitwet</option>
+                                    </select><br>
+                                    <label for="famstand">Familienstand</label>
+                                </div>
+                            </th>
+                        </tr class="kundenansicht">
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <input type="text" id="nname" name="nname" placeholder="Mustermann"> <br>
+                                <label for="nname">Nachname</label>
+                            </div>
+                        </th>
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <input type="text" id="vname" name="vname" placeholder="Max"> <br>
+                                <label for="vname">Vorname</label>
+                            </div>
+                        </th>
+                        <th class="kundenansicht">
+                            <div class="eingabefeld">
+                                <input type="number" id="sozialvnr" name="sozialvnr" placeholder="1020"> <br>
+                                <label for="sozialvnr">PLZ</label>
+                            </div>
+                        </th>
+                    
+
+                        <tr class="kundenansicht">
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="date" id="geb" name="geb"> <br>
+                                    <label for="geb">Geburtstag</label>
+                                </div>
+                            </th>
+                           
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="text" id="ort" name="ort" placeholder="Wien"> <br>
+                                    <label for="ort">Ort</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="kundenansicht">
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="tel" id="tel" name="tel" placeholder="+4306601234567"> <br>
+                                    <label for="tel">Teleofonnummer</label>
+                                </div>
+                            </th>
+                            <th class="kundenansicht">
+                                <div class="eingabefeld">
+                                    <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at"> <br>
+                                    <label for="email">E-Mail</label>
+                                </div>
+                            </th>
+                            
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div class="notiz">
+                    <label for="notiz">Zusätzliche Information</label><br>
+                    <input type="text" id="notiz" name="notiz">
+                </div>
+
+
+            </form>
+
+        </div>
+        <button class="submit" type="submit" onclick="addCustomerInDB()">Speichern</button>
+    </div>

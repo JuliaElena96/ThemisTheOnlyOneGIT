@@ -4,17 +4,21 @@ use themis;
 
 create table if not exists Kunden(
     kundenID int not null auto_increment primary key,
-    titel VARCHAR(255),
+    anrede VARCHAR(20),
+    titel VARCHAR(100),
     nname VARCHAR(255),
     vname VARCHAR(255),
     geb date, 
-    sozialvnr VARCHAR(255),
+    sozialvnr VARCHAR(50),
     famstand VARCHAR(255),
-    tel VARCHAR(255),
-    email VARCHAR(255),
-    plz VARCHAR(255),
-    ort VARCHAR(255), 
+    tel1 VARCHAR(50),
+    tel2 VARCHAR(50),
+    email VARCHAR(100),
+    plz VARCHAR(20),
+    ort VARCHAR(100), 
     str VARCHAR(255),
+    hausnr VARCHAR(20),
+    tuernr VARCHAR(20),
     wohnart VARCHAR(255),
     beruf VARCHAR(255),
     bankkonto VARCHAR(255)
@@ -272,7 +276,7 @@ create table if not exists hat(
     foreign key (notizID) references notizen (notizID)
 );
 
-INSERT INTO Kunden (titel, nname, vname, geb, sozialvnr, famstand, tel, email, plz, ort, str, wohnart, beruf)
+INSERT INTO Kunden (titel, nname, vname, geb, sozialvnr, famstand, tel1, email, plz, ort, str, wohnart, beruf)
 VALUES 
     (NULL, 'Mustermann', 'Matthias', '1996-11-09', '5052 091196', 'ledig', '06761234567', 'max.mustermann@example.com', '1010', 'Wien', 'Stephansplatz 1', 'Wohnung', 'Student'),
     ('Dr.', 'Müller', 'Anna', '1985-05-21', '3034 210585', 'verheiratet', '066012345678', 'anna.mueller@example.com', '4020', 'Linz', 'Hauptstraße 10', 'Eigentumshaus', 'Ärztin'),

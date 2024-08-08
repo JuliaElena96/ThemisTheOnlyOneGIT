@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/modalAddCustomer.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -41,7 +42,7 @@
     <div class="addCustomer" id="addCustomer">
         <h1>Kunde hinzufügen</h1>
 
-        <button class="submit" onclick="ausblendenFürAddCustomer(), einblendenAddCustomerContainer()">
+        <button id="showDialogAddCustomer" class="submit">
             <span class="fa-solid fa-user-plus"></span>
         </button>
     </div>
@@ -78,141 +79,6 @@
 
     </div>
 
-    <div id="titelAddCustomer">
-        <h2>Kundendaten eingeben</h2>
-    </div>
-
-    <div class="addCustomerContainer" id="addCustomerContainer">
-        <div class="innerAddCustomerContainer" id="innerAddCustomerContainer">
-
-            <form id="formAddCustomer" action="php/addCustomer.php" method="post">
-                <div>
-                    <table class="kundenansicht">
-
-                        <tr class="kundenansicht">
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <select type="text" id="anrede" name="anrede">
-                                        <option value="">Bitte auswählen</option>
-                                        <option value="herr">Herr</option>
-                                        <option value="frau">Frau</option>
-                                        <option value="divers">Divers</option>
-                                    </select><br>
-                                    <label for="famstand">Anrede</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="text" id="titel" name="titel" placeholder="Mag."> <br>
-                                    <label for="titel">Titel</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="text" id="str" name="str" placeholder="Musterstraße 1"> <br>
-                                    <label for="str">Straße</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <select type="text" id="famstand" name="famstand">
-                                        <option value="">Bitte auswählen</option>
-                                        <option value="ledig">ledig</option>
-                                        <option value="verheiratet">verheiratet</option>
-                                        <option value="geschieden">geschieden</option>
-                                        <option value="verwitwet">verwitwet</option>
-                                    </select><br>
-                                    <label for="famstand">Familienstand</label>
-                                </div>
-                            </th>
-                        </tr class="kundenansicht">
-                        <th class="kundenansicht">
-                            <div class="eingabefeld">
-                                <input type="text" id="nname" name="nname" placeholder="Mustermann"> <br>
-                                <label for="nname">Nachname</label>
-                            </div>
-                        </th>
-                        <th class="kundenansicht">
-                            <div class="eingabefeld">
-                                <input type="text" id="vname" name="vname" placeholder="Max"> <br>
-                                <label for="vname">Vorname</label>
-                            </div>
-                        </th>
-                        <th class="kundenansicht">
-                            <div class="eingabefeld">
-                                <input type="number" id="sozialvnr" name="sozialvnr" placeholder="1020"> <br>
-                                <label for="sozialvnr">PLZ</label>
-                            </div>
-                        </th>
-                        <th class="kundenansicht">
-                            <div class="eingabefeld">
-                                <select type="text" id="wohnart" name="wohnart">
-                                    <option value="">Bitte auswählen</option>
-                                    <option value="miete">Miete</option>
-                                    <option value="eigentum">Eigentum</option>
-                                    <option value="pacht">Pacht</option>
-                                </select><br>
-                                <label for="famstand">Wohnart</label>
-                            </div>
-                        </th>
-
-                        <tr class="kundenansicht">
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="date" id="geb" name="geb"> <br>
-                                    <label for="geb">Geburtstag</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="number" id="sozialvnr" name="sozialvnr" placeholder="1020"> <br>
-                                    <label for="sozialvnr">Sozialversicherungsnummer</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="text" id="ort" name="ort" placeholder="Wien"> <br>
-                                    <label for="ort">Ort</label>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr class="kundenansicht">
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="tel" id="tel" name="tel" placeholder="+4306601234567"> <br>
-                                    <label for="tel">Teleofonnummer</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at"> <br>
-                                    <label for="email">E-Mail</label>
-                                </div>
-                            </th>
-                            <th class="kundenansicht">
-                                <div class="eingabefeld">
-                                    <input type="text" id="bankkonto" name="bankkonto"
-                                        placeholder="AT20 1234 1234 1234"> <br>
-                                    <label for="bankkonto">Bankkonto</label>
-                                </div>
-                            </th>
-                        </tr>
-                    </table>
-
-                </div>
-
-                <div class="notiz">
-                    <label for="notiz">Zusätzliche Information</label><br>
-                    <input type="text" id="notiz" name="notiz">
-                </div>
-
-
-            </form>
-
-        </div>
-        <button class="submit" type="submit" onclick="addCustomerInDB()">Speichern</button>
-    </div>
-
     <hr>
 
     <div id="tabellenContainer">
@@ -231,7 +97,109 @@
 
     </div>
 
+    <!--Dialog Modal-->
+    <dialog id="ModalAddCustomer" class="ModalAddCustomer">
+        <h1>Kunde hinzufügen</h1>
+        <hr>
 
+        <form action="php/addCustomer.php" method="post">
+            <div>
+                <table class="tableModalAddCustomer">
+                    <tr class="trModalAddCustomer">
+
+                        <th class="thModalAddCustomer">
+                            <label for="anrede">Anrede</label>
+                            <br>
+                            <select type="text" id="anrede" name="anrede">
+                                <option value="" disabled selected hidden>Bitte auswählen</option>
+                                <option value="herr">Herr</option>
+                                <option value="frau">Frau</option>
+                                <option value="divers">Divers</option>
+                            </select>
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="title">Titel</label>
+                            <br>
+                            <input type="text" id="titel" name="titel" placeholder="Mag.">
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="vname">Vorname</label>
+                            <br>
+                            <input type="text" id="vname" name="vname" placeholder="Max">
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="nname">Nachname</label>
+                            <br>
+                            <input type="text" id="nname" name="nname" placeholder="Mustermann">
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="geb">Geburtsdatum</label>
+                            <br>
+                            <input type="date" id="geb" name="geb">
+
+
+                    </tr class="trModalAddCustomer">
+
+                    <th class="thModalAddCustomer">
+                        <label for="plz">PLZ</label>
+                        <br>
+                        <input type="number" id="plz" name="plz" placeholder="1220">
+                    </th>
+                    <th class="thModalAddCustomer">
+                        <label for="ort">Ort</label>
+                        <br>
+                        <input type="text" id="ort" name="ort" placeholder="Wien">
+                    </th>
+                    <th class="thModalAddCustomer">
+                        <label for="str">Straße</label>
+                        <br>
+                        <input type="text" id="str" name="str" placeholder="Musterstraße 1">
+                    </th>
+                    <th class="thModalAddCustomer">
+                        <label for="hausnr">Hausnummer</label>
+                        <br>
+                        <input type="text" id="hausnr" name="hausnr" placeholder="12a">
+                    </th>
+                    <th class="thModalAddCustomer" id="tuernr">
+                        <label for="tuernr">Stg/Tür</label>
+                        <br>
+                        <input type="text" id="tuernr" name="tuernr" placeholder="2/4">
+                    </th>
+
+
+                    <tr class="trModalAddCustomer">
+                        <th class="thModalAddCustomer">
+                            <label for="tel">Telefonnummer</label>
+                            <br>
+                            <input type="tel" id="tel" name="tel" placeholder="+4306601234567">
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="email">E-Mail</label>
+                            <br>
+                            <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at">
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <div class="notiz">
+                                <label for="notiz">Zusätzliche Information</label><br>
+                                <textarea id="notiz" name="notiz"></textarea>
+                            </div>
+                        </th>
+
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="btnContainer">
+                <button id="close-dialog" class="btnModalCancel">Abrechen</button>
+                <button id="addCustomer" type="submit" value="speichern" class="btnModal">Speichern</button>
+        </form>
+        </div>
+    </dialog>
 
 
 </body>

@@ -14,18 +14,4 @@ function einblendenKundentabelle(){
     $("#kundentabelle").show();
 }
 
-function ausblendenFürAddCustomer(){
-    document.getElementById("addCustomer").style.visibility = "hidden";
-    $(".addCustomer").hide();
-    document.getElementById("suchcontainer").style.visibility = "hidden";
-    $(".suchcontainer").hide();
-   
-}
-
-function einblendenAddCustomerContainer(){
-    document.getElementById("addCustomerContainer").style.visibility = "visible";
-    $(".addCustomerContainer").show();
-    document.getElementById("titelAddCustomer").style.visibility = "visible";
-    $(".titelAddCustomer").show();
-}
 

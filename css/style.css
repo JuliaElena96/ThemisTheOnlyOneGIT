@@ -2,6 +2,7 @@
     font-family: "PT Sans", sans-serif;
 
 }
+
 body {
     padding-top: var(--navbar-height);
 }
@@ -13,7 +14,7 @@ body {
     /* Definieren Sie eine Variable für die Höhe */
 }
 
-.n_top {    
+.n_top {
     width: 100%;
     height: 230px;
     position: fixed;
@@ -31,7 +32,6 @@ body {
     object-fit: contain;
     /* Seitenverhältnis beibehalten */
     margin-right: 30px;
-
 }
 
 .navContainer {
@@ -42,11 +42,6 @@ body {
     height: var(--navbar-height);
     display: flex;
     align-items: center;
-    
-   
-
-
-
 }
 
 .navContainer ul {
@@ -56,9 +51,6 @@ body {
     padding: 0;
     margin: 0;
     list-style-type: none;
-  
-
-
 }
 
 .navContainer ul li {
@@ -70,7 +62,6 @@ body {
     /* Fügt "..." hinzu, wenn der Text abgeschnitten wird */
     white-space: nowrap;
     /* Verhindert, dass der Text umbricht */
-    
 }
 
 #navlist {
@@ -88,10 +79,6 @@ body {
     height: 60px;
     width: calc(100% - 130px);
     padding-left: 0px;
-
-
-
-
 }
 
 #navlist a {
@@ -102,7 +89,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    
+
 }
 
 #navlist li {
@@ -117,6 +104,28 @@ body {
     border-radius: 10px;
 }
 
+
+.tab {
+    display: none;
+}
+.tab.active {
+    display: block;
+}
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+.tab-buttons button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.tab-buttons button.active {
+    background-color: #ccc;
+}
 
 .pt-sans-regular {
     font-family: "PT Sans", sans-serif;
@@ -150,7 +159,7 @@ body {
     padding-right: 30px;
     padding-top: 10px;
     font-size: 20px;
-    
+
 
 
 
@@ -168,10 +177,7 @@ body {
     align-items: center;
     width: 50%;
     margin: auto;
-    visibility: hidden;
-
-
-}
+   }
 
 .addCustomer button {
     width: 60px;
@@ -193,8 +199,6 @@ body {
 .suchcontainer {
     width: 50%;
     margin: auto;
-    visibility: hidden;
- 
 }
 
 .suchcontainer p {
@@ -222,7 +226,6 @@ body {
     border-radius: 10px;
     border: 1px solid black;
     height: 30px;
-
     padding-inline-start: 10px;
 }
 
@@ -291,19 +294,15 @@ td {
     visibility: hidden;
 }
 
-.gesellschaft {
-    visibility: hidden;
-}
+
 
 .tableRow a {
-    color: inherit; 
-    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: inherit;
+    text-decoration: none;
+    /* Entfernt die Unterstreichung */
 }
 
 .tableRow:hover {
-    background-color:#ebdde2; 
+    background-color: #241c23;
+    color: white;
 }
-
-
-
-

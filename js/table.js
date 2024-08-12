@@ -28,12 +28,12 @@ function seperateValues(dataObj) {
     for (let i = 0; i < array.length; i++) {
         // Jedes Element an den Doppelpunkten aufteilen
         let keyValueSeparator = array[i].split(":");
-        
+
 
 
         // Über das resultierende Array iterieren
         for (let j = 0; j < keyValueSeparator.length; j++) {
-        
+
             if (i === 0) {
                 nname = keyValueSeparator[1].replace(/[\[\]{}""]/g, '');
             }
@@ -52,10 +52,10 @@ function seperateValues(dataObj) {
             if (i === 5) {
                 str = keyValueSeparator[1].replace(/[\[\]{}""]/g, '');
             }
-            
+
         }
-        
-        
+
+
     }
     /*console.log("Nachname: ", nname);
     console.log("Vorname: ", vname);
@@ -63,9 +63,9 @@ function seperateValues(dataObj) {
     console.log("PLZ: ", plz);
     console.log("Ort: ", ort);
     console.log("Str: ", str);*/
-    
-    
-   AddRow(nname, vname, geb, plz, ort, str);
+
+
+    AddRow(nname, vname, geb, plz, ort, str);
 
 }
 
@@ -78,34 +78,41 @@ table.appendChild(tbody);
 document.getElementById('tabellenContainer').appendChild(table);
 
 //Tabelle erstellen
-function AddRow(nname, vname,geb, plz, ort, str) {
-   
-
+function AddRow(nname, vname, geb, plz, ort, str) {
     console.log("start AddRow");
 
     let newRow = document.createElement("tr");
     newRow.setAttribute("class", "tableRow");
+
+    let link = document.createElement('a');
+    link.href = "kundenmaske.html";
+    link.style.display = "contents"; // Damit das <a>-Tag die gesamte Zeile umschließt
+
     let nachname = document.createElement('td');
     nachname.innerHTML = nname;
+
     let vorname = document.createElement('td');
     vorname.innerHTML = vname;
+
     let geburtsdatum = document.createElement('td');
     geburtsdatum.innerHTML = geb;
+
     let postleitzahl = document.createElement('td');
     postleitzahl.innerHTML = plz;
+
     let htmlOrt = document.createElement('td');
     htmlOrt.innerHTML = ort;
+
     let straße = document.createElement('td');
     straße.innerHTML = str;
-   
-    newRow.appendChild(nachname);
-    newRow.appendChild(vorname);
-    newRow.appendChild(geburtsdatum);
-    newRow.appendChild(postleitzahl);
-    newRow.appendChild(htmlOrt);
-    newRow.appendChild(straße);
 
+    link.appendChild(nachname);
+    link.appendChild(vorname);
+    link.appendChild(geburtsdatum);
+    link.appendChild(postleitzahl);
+    link.appendChild(htmlOrt);
+    link.appendChild(straße);
+
+    newRow.appendChild(link);
     tbody.appendChild(newRow);
-
-  
 }

@@ -1,0 +1,39 @@
+.tab {
+    background-color: white; /* Hintergrundfarbe weiß */
+    border: 2px solid black; /* Schwarzer Rand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    display: inline-block; /* Tabs nebeneinander anzeigen */
+    padding: 10px; /* Innenabstand */
+    margin: 5px; /* Außenabstand */
+    text-align: center; /* Text zentrieren */
+    width: calc(100% / 3 - 20px); /* Breite der Tabs, angepasst für 3 Tabs nebeneinander */
+    box-sizing: border-box; /* Box-Sizing auf Border-Box setzen */
+}
+
+.tab-container {
+    display: flex; /* Flexbox-Layout für die Container */
+    justify-content: space-between; /* Platz zwischen den Tabs */
+    width: 100%; /* Container-Breite */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+.tabs div.active {
+    background-color: rgba(156, 4, 51, 1);
+    color: white;
+}

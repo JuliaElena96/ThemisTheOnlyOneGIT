@@ -277,25 +277,32 @@ td {
     text-align: left;
     padding: 8px;
     width: 250px;
-
 }
 
 #tabellenContainer {}
 
 .kundenansicht {
     border: none;
-  }
+}
+
 #titelAddCustomer {
     margin-left: 330px;
     width: 72%;
     visibility: hidden;
-    
 }
 
+.gesellschaft {
+    visibility: hidden;
+}
 
+.tableRow a {
+    color: inherit; 
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
 
-
-
+.tableRow:hover {
+    background-color:#ebdde2; 
+}
 
 
 

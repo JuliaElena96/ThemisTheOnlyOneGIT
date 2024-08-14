@@ -1,7 +1,8 @@
 #stammdaten{
-  width: 50%;
+    width: 50%;
     margin: auto;
     position: relative;
+
 }
 #vertraegeKunde{
     width: 50%;
@@ -20,24 +21,54 @@
 }
 
 .stammdatenContainer{
-
+    font-size: large;
     border: 1px solid black;
     border-radius: 10px;
+
     position: relative;
     width: 100%;
     height: 550px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#containerForBtn{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 5%;
+    padding-right: 20px;
 }
 button{
-    position: absolute; 
-    right: 10px; 
-    bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+button:first-child{
+    margin-right: 30px;
 }
 label{
     font-weight: bold;
 }
 span{
-    margin-left: 15px;
+    margin-left: 30px;
 }
 .data-field{
-    margin: 15px auto auto 15px;
+    margin: 15px 70% auto 15px;
+    
+}
+.tableContainer {
+    margin-top: 15px;
+    margin-left: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.tableLeft, .tableRight {
+    border-collapse: collapse;
+}
+
+.tableLeft td, .tableRight td {
+    padding: 8px;
+    border: none;
+}
+.tableLeft td:first-child, .tableRight td:first-child {
+    font-weight: bold;
 }

@@ -1,33 +1,36 @@
 
-create database if not exists themis;
-use themis;
+CREATE DATABASE IF NOT EXISTS themis CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE themis;
 
 create table if not exists Kunden(
     kundenID int not null auto_increment primary key,
-    anrede VARCHAR(20),
-    titel VARCHAR(100),
-    nname VARCHAR(255),
-    vname VARCHAR(255),
+    anrede VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    titel VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    nname VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    vname VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
     geb date, 
-    sozialvnr VARCHAR(50),
-    famstand VARCHAR(255),
-    tel1 VARCHAR(50),
-    tel2 VARCHAR(50),
-    email VARCHAR(100),
-    plz VARCHAR(20),
-    ort VARCHAR(100), 
-    str VARCHAR(255),
-    hausnr VARCHAR(20),
-    tuernr VARCHAR(20),
-    wohnart VARCHAR(255),
-    beruf VARCHAR(255),
-    bankkonto VARCHAR(255)
+    sozialvnr VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    famstand VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    tel1 VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    tel2 VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    email VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    plz VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    ort VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    land VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    staatsbuergerschaft VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    str VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    hausnr VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    tuernr VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    beruf VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    bank VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    iban VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    bic VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 );
 
 
 create table if not exists Vertrag_allg(
     vertragsID int not null auto_increment primary key,
-    gesellschaft VARCHAR(255),
+    gesellschaft VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
     pol VARCHAR(255), 
     vertragsart VARCHAR(255),
     status VARCHAR(255),
@@ -247,6 +250,7 @@ create table if not exists notizen(
 );
 
 
+
 create table if not exists hat(
     hatID int not null auto_increment primary key,
     kundenID int,
@@ -275,72 +279,26 @@ create table if not exists hat(
     foreign key (gesID) references t_gesellschaft (gesID),
     foreign key (notizID) references notizen (notizID)
 );
-
-INSERT INTO Kunden (titel, nname, vname, geb, sozialvnr, famstand, tel1, email, plz, ort, str, wohnart, beruf)
-VALUES 
-    (NULL, 'Mustermann', 'Matthias', '1996-11-09', '5052 091196', 'ledig', '06761234567', 'max.mustermann@example.com', '1010', 'Wien', 'Stephansplatz 1', 'Wohnung', 'Student'),
-    ('Dr.', 'Müller', 'Anna', '1985-05-21', '3034 210585', 'verheiratet', '066012345678', 'anna.mueller@example.com', '4020', 'Linz', 'Hauptstraße 10', 'Eigentumshaus', 'Ärztin'),
-    (NULL, 'Schmidt', 'Julia', '1978-09-15', '4012 150978', 'verheiratet', '069912345678', 'julia.schmidt@example.com', '5020', 'Salzburg', 'Mozartgasse 5', 'Wohnung', 'Lehrerin'),
-    (NULL, 'Wagner', 'Markus', '1990-03-30', '8013 300390', 'ledig', '067612345678', 'markus.wagner@example.com', '8020', 'Graz', 'Hauptplatz 3', 'Wohnung', 'Informatiker'),
-    ('Mag.', 'Huber', 'Sabine', '1973-07-12', '6011 120773', 'geschieden', '066012345678', 'sabine.huber@example.com', '6020', 'Innsbruck', 'Universitätsstraße 10', 'Wohnung', 'Juristin'),
-    (NULL, 'Fischer', 'Thomas', '1982-04-18', '3056 180482', 'ledig', '069912345678', 'thomas.fischer@example.com', '1030', 'Wien', 'Landstraßer Hauptstraße 15', 'Wohnung', 'Verkäufer'),
-    ('Dr.', 'Neumann', 'Monika', '1967-12-05', '4059 051267', 'ledig', '067612345678', 'monika.neumann@example.com', '1130', 'Wien', 'Hietzinger Hauptstraße 20', 'Wohnung', 'Psychologin'),
-    (NULL, 'Weber', 'Andreas', '1975-06-29', '8054 290675', 'verheiratet', '066012345678', 'andreas.weber@example.com', '8045', 'Graz', 'Griesplatz 7', 'Eigentumshaus', 'Architekt'),
-    (NULL, 'Leitner', 'Petra', '1989-08-07', '3076 070889', 'ledig', '069912345678', 'petra.leitner@example.com', '9020', 'Klagenfurt', 'Villacher Ring 1', 'Wohnung', 'Ingenieurin'),
-    (NULL, 'Maier', 'Stefan', '1980-01-25', '7035 250180', 'ledig', '067612345678', 'stefan.maier@example.com', '6020', 'Innsbruck', 'Rennweg 8', 'Wohnung', 'Journalist'),
-    (NULL, 'Berger', 'Martina', '1995-10-03', '5071 031095', 'ledig', '066012345678', 'martina.berger@example.com', '5020', 'Salzburg', 'Mirabellplatz 4', 'Wohnung', 'Studentin'),
-    ('Dr.', 'Winkler', 'Andreas', '1971-02-14', '4096 140271', 'verheiratet', '069912345678', 'andreas.winkler@example.com', '5020', 'Salzburg', 'Schlossallee 15', 'Eigentumshaus', 'Anwalt'),
-    (NULL, 'Schuster', 'Christina', '1986-11-28', '6053 281186', 'ledig', '067612345678', 'christina.schuster@example.com', '6020', 'Innsbruck', 'Höttinger Gasse 9', 'Wohnung', 'Designerin'),
-    (NULL, 'Mayr', 'Philipp', '1979-03-17', '7059 170379', 'verheiratet', '066012345678', 'philipp.mayr@example.com', '9020', 'Klagenfurt', 'Heuplatz 2', 'Eigentumshaus', 'Unternehmer'),
-    (NULL, 'Wiesinger', 'Nicole', '1992-07-06', '6092 060792', 'ledig', '069912345678', 'nicole.wiesinger@example.com', '4040', 'Linz', 'Donaulände 12', 'Wohnung', 'Grafikdesignerin'),
-    (NULL, 'Hofmann', 'Alexander', '1987-05-12', '5016 120587', 'verheiratet', '067612345678', 'alexander.hofmann@example.com', '5020', 'Salzburg', 'Mozartstraße 7', 'Eigentumshaus', 'Ingenieur'),
-    (NULL, 'Schmid', 'Laura', '1998-09-09', '6073 090998', 'ledig', '066012345678', 'laura.schmid@example.com', '6020', 'Innsbruck', 'Amraser Straße 6', 'Wohnung', 'Studentin'),
-    (NULL, 'Binder', 'Dominik', '1984-06-07', '7042 070684', 'ledig', '069912345678', 'dominik.binder@example.com', '6020', 'Innsbruck', 'Sillgasse 3', 'Wohnung', 'Softwareentwickler'),
-    ('Dr.', 'Pfeiffer', 'Nadine', '1977-04-30', '8034 300477', 'geschieden', '067612345678', 'nadine.pfeiffer@example.com', '8045', 'Graz', 'Elisabethstraße 18', 'Eigentumshaus', 'Ärztin'),
-    (NULL, 'Wolf', 'Julian', '1993-12-15', '5126 151293', 'ledig', '066012345678', 'julian.wolf@example.com', '1010', 'Wien', 'Kärntner Straße 1', 'Wohnung', 'Lehrer');
-
-
-    -- KFZ-Verträge zuweisen
-INSERT INTO Vertrag_allg (gesellschaft, pol, vertragsart, status, beginn, ende, kuedatum, zahlweise, praemie, sparte, verssumme, kundenID)
-SELECT 'Allianz', 'A80467891', 'Eigenenvertrag', 'aufrecht', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 YEAR), CURDATE(), 'monatlich', 150, 'KFZ', 
-       CASE 
-           WHEN kundenID % 3 = 0 THEN 12000000
-           WHEN kundenID % 3 = 1 THEN 15000000
-           ELSE 20000000
-       END AS verssumme,
-       kundenID
-FROM Kunden;
-
--- Haushalts- oder Eigenheimverträge zuweisen
-INSERT INTO Vertrag_allg (gesellschaft, pol, vertragsart, status, beginn, ende, kuedatum, zahlweise, praemie, sparte, kundenID)
-SELECT 'Allianz', 'A80467891', 'Eigenenvertrag', 'aufrecht', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 YEAR), CURDATE(), 'monatlich', 300, 
-       CASE 
-           WHEN kundenID % 2 = 0 THEN 'Haushalt'
-           ELSE 'Eigenheim'
-       END AS sparte,
-       kundenID
-FROM Kunden;
-
--- Unfallversicherungen zuweisen
-INSERT INTO Vertrag_allg (gesellschaft, pol, vertragsart, status, beginn, ende, kuedatum, zahlweise, praemie, sparte, kundenID)
-SELECT 'Allianz', 'A80467891', 'Eigenenvertrag', 'aufrecht', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 YEAR), CURDATE(), 'monatlich', 300, 'Unfall', kundenID
-FROM Kunden;
-
--- Lebensversicherungen zuweisen (nur jedem 1/3 Kunden)
-INSERT INTO Vertrag_allg (gesellschaft, pol, vertragsart, status, beginn, ende, kuedatum, zahlweise, praemie, sparte, kundenID)
-SELECT 'Allianz', 'A80467891', 'Eigenenvertrag', 'aufrecht', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 YEAR), CURDATE(), 'monatlich', 300, 'Leben', kundenID
-FROM Kunden
-WHERE kundenID % 3 = 0;
-
--- Kasko-Versicherungen zuweisen (jedem 5. KFZ-Vertrag)
-UPDATE Vertrag_allg 
-SET sparte = 'Kasko'
-WHERE vertragsID IN (
-    SELECT vertragsID
-    FROM (
-        SELECT vertragsID, ROW_NUMBER() OVER () AS row_num
-        FROM Vertrag_allg
-        WHERE sparte = 'KFZ'
-    ) AS temp
-    WHERE row_num % 5 = 0
-);
+INSERT INTO Kunden 
+(anrede, titel, nname, vname, geb, sozialvnr, famstand, tel1, tel2, email, plz, ort, land, staatsbuergerschaft, str, hausnr, tuernr, beruf, bank, iban, bic)
+VALUES
+('Herr', 'Dr.', 'Müller', 'Hans', '1980-01-15', '1234', 'Verheiratet', '0123456789', '0987654321', 'hans.mueller@example.com', '10115', 'Berlin', 'Deutschland', 'Deutsch', 'Hauptstraße', '1', '2', 'Arzt', 'Deutsche Bank', 'DE12345678901234567890', 'DEUTDEBBXXX'),
+('Frau', 'Prof.', 'Schmidt', 'Anna', '1975-05-20', '5678', 'Ledig', '0123456780', '0987654320', 'anna.schmidt@example.com', '80331', 'München', 'Deutschland', 'Deutsch', 'Bahnhofstraße', '3', '4', 'Professorin', 'Commerzbank', 'DE22345678901234567890', 'COBADEFFXXX'),
+('Herr', 'Dipl.-Ing.', 'Schneider', 'Peter', '1985-03-12', '2345', 'Verheiratet', '0123456781', '0987654321', 'peter.schneider@example.com', '50667', 'Köln', 'Deutschland', 'Deutsch', 'Schulstraße', '5', '6', 'Ingenieur', 'Volksbank', 'DE32345678901234567890', 'GENODEF1V01'),
+('Frau', '', 'Weber', 'Katrin', '1990-10-25', '6789', 'Verheiratet', '0123456782', '0987654322', 'katrin.weber@example.com', '20095', 'Hamburg', 'Deutschland', 'Deutsch', 'Ringstraße', '7', '8', 'Lehrerin', 'Postbank', 'DE42345678901234567890', 'PBNKDEFFXXX'),
+('Herr', 'Mag.', 'Fischer', 'Stefan', '1988-09-30', '3456', 'Verheiratet', '0123456783', '0987654323', 'stefan.fischer@example.com', '60311', 'Frankfurt', 'Deutschland', 'Deutsch', 'Musterweg', '9', '10', 'Jurist', 'Sparkasse', 'DE52345678901234567890', 'SPARKDEFFXXX'),
+('Frau', '', 'Bauer', 'Sabine', '1978-04-15', '7890', 'Geschieden', '0123456784', '0987654324', 'sabine.bauer@example.com', '01067', 'Dresden', 'Deutschland', 'Deutsch', 'Waldstraße', '11', '12', 'Ärztin', 'Deutsche Bank', 'DE62345678901234567890', 'DEUTDEDBXXX'),
+('Herr', '', 'Wagner', 'Thomas', '1995-07-21', '4567', 'Ledig', '0123456785', '0987654325', 'thomas.wagner@example.com', '68159', 'Mannheim', 'Deutschland', 'Deutsch', 'Blumenstraße', '13', '14', 'Architekt', 'Commerzbank', 'DE72345678901234567890', 'COBADEFFXXX'),
+('Frau', '', 'Wolf', 'Petra', '1982-02-18', '8901', 'Verheiratet', '0123456786', '0987654326', 'petra.wolf@example.com', '60311', 'Frankfurt', 'Deutschland', 'Deutsch', 'Gartenstraße', '15', '16', 'Lehrerin', 'Volksbank', 'DE82345678901234567890', 'GENODEF1V02'),
+('Herr', '', 'Meyer', 'Michael', '1992-11-11', '5670', 'Ledig', '0123456787', '0987654327', 'michael.meyer@example.com', '10785', 'Berlin', 'Deutschland', 'Deutsch', 'Seestraße', '17', '18', 'Bankkaufmann', 'Postbank', 'DE92345678901234567890', 'PBNKDEFFXXX'),
+('Frau', '', 'Becker', 'Julia', '1986-06-08', '6781', 'Verheiratet', '0123456788', '0987654328', 'julia.becker@example.com', '04109', 'Leipzig', 'Deutschland', 'Deutsch', 'Parkstraße', '19', '20', 'Ärztin', 'Sparkasse', 'DE02345678901234567890', 'SPARKDEFFXXX'),
+('Herr', '', 'Schulz', 'Martin', '1989-12-30', '3450', 'Verheiratet', '0123456789', '0987654329', 'martin.schulz@example.com', '90402', 'Nürnberg', 'Deutschland', 'Deutsch', 'Schillerstraße', '21', '22', 'Lehrer', 'Deutsche Bank', 'DE12345678901234567891', 'DEUTDEBBXXX'),
+('Frau', '', 'Koch', 'Sabrina', '1973-03-15', '2341', 'Ledig', '0123456790', '0987654330', 'sabrina.koch@example.com', '39104', 'Magdeburg', 'Deutschland', 'Deutsch', 'Mozartstraße', '23', '24', 'Künstlerin', 'Commerzbank', 'DE22345678901234567891', 'COBADEFFXXX'),
+('Herr', '', 'Richter', 'Lukas', '1984-09-29', '4562', 'Verheiratet', '0123456791', '0987654331', 'lukas.richter@example.com', '70173', 'Stuttgart', 'Deutschland', 'Deutsch', 'Beethovenstraße', '25', '26', 'Musiker', 'Volksbank', 'DE32345678901234567891', 'GENODEF1V03'),
+('Frau', '', 'Neumann', 'Laura', '1991-01-19', '6783', 'Verheiratet', '0123456792', '0987654332', 'laura.neumann@example.com', '48143', 'Münster', 'Deutschland', 'Deutsch', 'Bachstraße', '27', '28', 'Journalistin', 'Postbank', 'DE42345678901234567891', 'PBNKDEFFXXX'),
+('Herr', '', 'Schwarz', 'Tim', '1993-07-14', '7894', 'Ledig', '0123456793', '0987654333', 'tim.schwarz@example.com', '28195', 'Bremen', 'Deutschland', 'Deutsch', 'Lindenstraße', '29', '30', 'Designer', 'Sparkasse', 'DE52345678901234567891', 'SPARKDEFFXXX'),
+('Frau', '', 'Zimmermann', 'Claudia', '1980-05-25', '8905', 'Verheiratet', '0123456794', '0987654334', 'claudia.zimmermann@example.com', '40213', 'Düsseldorf', 'Deutschland', 'Deutsch', 'Eichenstraße', '31', '32', 'Ärztin', 'Deutsche Bank', 'DE62345678901234567891', 'DEUTDEDBXXX'),
+('Herr', '', 'Krüger', 'Jan', '1997-09-10', '3456', 'Ledig', '0123456795', '0987654335', 'jan.krueger@example.com', '99084', 'Erfurt', 'Deutschland', 'Deutsch', 'Weinstraße', '33', '34', 'Student', 'Commerzbank', 'DE72345678901234567891', 'COBADEFFXXX'),
+('Frau', '', 'Hofmann', 'Lisa', '1983-12-04', '2347', 'Verheiratet', '0123456796', '0987654336', 'lisa.hofmann@example.com', '30159', 'Hannover', 'Deutschland', 'Deutsch', 'Rosenstraße', '35', '36', 'Ärztin', 'Volksbank', 'DE82345678901234567891', 'GENODEF1V04'),
+('Herr', '', 'Walter', 'Felix', '1990-08-07', '4568', 'Ledig', '0123456797', '0987654337', 'felix.walter@example.com', '60311', 'Frankfurt', 'Deutschland', 'Deutsch', 'Kirchstraße', '37', '38', 'Architekt', 'Postbank', 'DE92345678901234567891', 'PBNKDEFFXXX'),
+('Frau', '', 'Klein', 'Nina', '1987-02-28', '7899', 'Verheiratet', '0123456798', '0987654338', 'nina.klein@example.com', '50667', 'Köln', 'Deutschland', 'Deutsch', 'Hafenstraße', '39', '40', 'Rechtsanwältin', 'Sparkasse', 'DE02345678901234567891', 'SPARKDEFFXXX');

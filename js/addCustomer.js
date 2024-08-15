@@ -1,9 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("showDialogAddCustomer").addEventListener("click", () => {
-        document.getElementById("ModalAddCustomer").showModal();
-    });
+    const showDialogButton = document.getElementById("showDialogAddCustomer");
+    const modalAddCustomer = document.getElementById("ModalAddCustomer");
+    const closeDialogButton = document.getElementById("close-dialog");
 
-    document.getElementById("close-dialog").addEventListener("click", () => {
-        document.getElementById("ModalAddCustomer").close();
-    });
+    if (showDialogButton && modalAddCustomer) {
+        showDialogButton.addEventListener("click", () => {
+            modalAddCustomer.showModal();
+        });
+    } else {
+        console.error('showDialogAddCustomer or ModalAddCustomer not found');
+    }
+
+    if (closeDialogButton && modalAddCustomer) {
+        closeDialogButton.addEventListener("click", () => {
+            modalAddCustomer.close();
+        });
+    } else {
+        console.error('close-dialog or ModalAddCustomer not found');
+    }
 });

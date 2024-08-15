@@ -1,61 +1,53 @@
+document.addEventListener('DOMContentLoaded', function() {
+    $myFetch.debug = false;
+    $myFetch.timeout = 5000;
 
-$myFetch.debug = false;
-$myFetch.timeout = 5000;
+    const formEl = document.getElementById("formSearch");
+    const $nnameEl = document.getElementById("nname");
+    const $vnameEl = document.getElementById("vname");
+    const $plzEl = document.getElementById("plz");
+    const $ortEl = document.getElementById("ort");
 
-const formEl = document.getElementById("formSearch");
+    if (formEl && $nnameEl && $vnameEl && $plzEl && $ortEl) {
+        const $myPostUrl = formEl.getAttribute("action"); // greift auf das Attribut action in index.html zu
 
-const $nnameEl = document.getElementById("nname");
-const $vnameEl = document.getElementById("vname");
-const $plzEl = document.getElementById("plz");
-const $ortEl = document.getElementById("ort");
+        formEl.addEventListener("submit", formSearchSubmit);
 
-const $myPostUrl = formEl.getAttribute("action"); //greift auf das Atribut action in index.html zu
-//const tableEl = document.getElementById("kundentabelle");
+        function formSearchSubmit(event) {
+            event.preventDefault();
 
-formEl.addEventListener("submit", formSearchSubmit);
+            let sendData = {
+                nname: $nnameEl.value,
+                vname: $vnameEl.value,
+                plz: $plzEl.value,
+                ort: $ortEl.value
+            };
 
-function formSearchSubmit(event) {
-    event.preventDefault();
+            // Objekt in einen String im JSON-Format umwandeln
+            console.log(`formSearchSubmit ${JSON.stringify(sendData)}`);
+            $myPost($myPostUrl, sendData, receiveJsonData, receiveTextData, receiveError); // HTTP-POST-Anforderung senden
 
-    let sendData = {
-        nname: $nnameEl.value,
-        vname: $vnameEl.value,
-        plz: $plzEl.value,
-        ort: $ortEl.value
-    };
+            function receiveJsonData(dataObj) {
+                console.log(`receiveJsonData : ${JSON.stringify(dataObj)}`);
+                console.log(`receiveJsonData Length : ${dataObj.length}`);
 
-    //Objekt in einen Sting im JSON-Format umwandeln
-    console.log(`formSearchSubmit ${JSON.stringify(sendData)}`);
-    $myPost($myPostUrl, sendData, receiveJsonData, receiveTextData, receiveError); //HTTP-POST-Anforderung senden
+                removeTableRows();
+                for (let i = 0; i < dataObj.length; i++) {
+                    seperateValues(dataObj[i]);
+                }
+            }
 
-    //
-    function receiveJsonData(dataObj) {
-        console.log(`receiveJsonData : ${JSON.stringify(dataObj)}`);
-        console.log(`receiveJsonData Length : ${dataObj.length}`);
+            function receiveTextData(dataText) {
+                console.log(`receiveTextData : ${dataText}`);
+                dataObj = JSON.parse(dataText);
+            }
 
-        removeTableRows();
-        for (let i = 0; i < dataObj.length; i++) {
-            seperateValues(dataObj[i]);
+            function receiveError(error) {
+                console.error(`Error: ${error}`);
+                removeTableRows();
+            }
         }
-
-
-
-        // console.log("Nachname: ", dataObj[0]);
-        //console.log("Suche einträge gefunden", dataObj.length );                
+    } else {
+        console.error('One or more form elements not found');
     }
-
-    function receiveTextData(dataText) {
-        console.log(`receiveTextData : ${dataText}`);
-        dataObj = JSON.parse(dataText);
-
-    }
-    function receiveError(error) {
-        //console.error(`Error: ${error}`);
-        removeTableRows();
-        
-    }
-
-
-
-
-}
+});

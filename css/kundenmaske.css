@@ -1,74 +1,60 @@
-#stammdaten{
-    width: 50%;
+#stammdaten {
+    width: 70%;
     margin: auto;
-    position: relative;
+    position: fixed;
 
 }
-#vertraegeKunde{
-    width: 50%;
+
+#vertraegeKunde {
+    width: 70%;
     margin: auto;
-    position: relative;
-}
-#dokumente{
-    width: 50%;
-    margin: auto;
-    position: relative;
-}
-#beziehungen{
-    width: 50%;
-    margin: auto;
-    position: relative;
+    position: fixed;
 }
 
-.stammdatenContainer{
-    font-size: large;
-    border: 1px solid black;
-    border-radius: 10px;
-
-    position: relative;
-    width: 100%;
-    height: 550px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+#dokumente {
+    width: 70%;
+    margin: auto;
+    position: fixed;
 }
-#containerForBtn{
+
+#beziehungen {
+    width: 70%;
+    margin: auto;
+    position: fixed;
+}
+
+.stammdatenContainer {
+    border: 1px solid rgb(238, 13, 13);
+    display: block;
+    margin-top: 10px;
+    width: 110%;
+    border-collapse: collapse;
+}
+
+#containerForBtn {
     display: flex;
     justify-content: right;
     align-items: center;
     margin-top: 5%;
     padding-right: 20px;
 }
-button{
+
+button {
     font-size: 15px;
     font-weight: bold;
 }
-button:first-child{
+
+button:first-child {
     margin-right: 30px;
 }
-label{
-    font-weight: bold;
-}
-span{
-    margin-left: 30px;
-}
-.data-field{
-    margin: 15px 70% auto 15px;
-    
-}
-.tableContainer {
-    margin-top: 15px;
-    margin-left: 15px;
-    display: flex;
-    gap: 15px;
+
+.stammdatenContainer table,
+.stammdatenContainer tr,
+.stammdatenContainer td,
+.stammdatenContainer select,
+.stammdatenContainer input {
+    padding: 0;
+    margin: 0;
+    font-size: large;
 }
 
-.tableLeft, .tableRight {
-    border-collapse: collapse;
-}
-
-.tableLeft td, .tableRight td {
-    padding: 8px;
-    border: none;
-}
-.tableLeft td:first-child, .tableRight td:first-child {
-    font-weight: bold;
-}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<!-- Navbar -->
+    <!-- Navbar -->
     <div class="n_top">
         <div class="navContainer">
             <img id="logo" src="pic/LogoCutted.png" alt="Themis Logo" onclick="window.location.reload();">
@@ -46,63 +46,68 @@
         </div>
     </div>
     <!--Kunde Tab-->
-        <div class="tab" id="kunde">
-        <div class="addCustomer" id="addCustomer">
-            <h1>Kunde hinzufügen</h1>
-            <button id="showDialogAddCustomer" class="submit">
-                <span class="fa-solid fa-user-plus"></span>
-            </button>
-        </div>
-        <div class="suchcontainer" id="suchcontainer">
-            <div class="innerSuchContainer">
-                <h1>Kundensuche</h1>
-                <form id="formSearch" action="php/dbManager.php" method="post">
-                    <div class="eingabefeld">
-                        <input type="text" id="nname" name="nname"> <br>
-                        <label for="nname">Nachname</label>
-                    </div>
-                    <div class="eingabefeld">
-                        <input type="text" id="vname" name="vname"> <br>
-                        <label for="vname">Vorname</label>
-                    </div>
-                    <div class="eingabefeld">
-                        <input type="text" id="plz" name="plz"> <br>
-                        <label for="plz">PLZ</label>
-                    </div>
-                    <div class="eingabefeld">
-                        <input type="text" id="ort" name="ort"> <br>
-                        <label for="ort">Ort</label>
-                    </div>
-                    <div class="eingabefeld">
-                        <button class="submit" type="submit" value="Suchen" onclick="einblendenKundentabelle()">Suchen</button>
-                    </div>
-                </form>
+    <div class="tab" id="kunde">
+        <div class="test">
+            <div class="addCustomer" id="addCustomer">
+                <h1>Kunde hinzufügen</h1>
+                <button id="showDialogAddCustomer" class="submit">
+                    <span class="fa-solid fa-user-plus"></span>
+                </button>
+            </div>
+
+            <div class="suchcontainer" id="suchcontainer">
+                <div class="innerSuchContainer">
+                    <h1>Kundensuche</h1>
+                    <form id="formSearch" action="php/dbManager.php" method="post">
+                        <div class="eingabefeld">
+                            <input type="text" id="nname" name="nname"> <br>
+                            <label for="nname">Nachname</label>
+                        </div>
+                        <div class="eingabefeld">
+                            <input type="text" id="vname" name="vname"> <br>
+                            <label for="vname">Vorname</label>
+                        </div>
+                        <div class="eingabefeld">
+                            <input type="text" id="plz" name="plz"> <br>
+                            <label for="plz">PLZ</label>
+                        </div>
+                        <div class="eingabefeld">
+                            <input type="text" id="ort" name="ort"> <br>
+                            <label for="ort">Ort</label>
+                        </div>
+                        <div class="eingabefeld">
+                            <button class="submit" type="submit" value="Suchen"
+                                onclick="einblendenKundentabelle()">Suchen</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-<!--Kunde Tab Ende-->
+    <!--Kunde Tab Ende-->
 
- <!-- Verträge tab -->
-<div class="tab" id="vertraege">
-    <h1>Verträge</h1>
-   
-</div>
- <!-- Verträge Ende -->
 
-<div class="tab" id="wiedervolgage">
-    <h1>Wiedervolgage</h1>
-    
-</div>
-<div class="tab" id="gesellschaft">
-    <h1>Gesellschaft</h1>
-   
-</div>
+    <!-- Verträge tab -->
+    <div class="tab" id="vertraege">
+        <h1>Verträge</h1>
 
-        <hr>
+    </div>
+    <!-- Verträge Ende -->
 
-        <div id="tabellenContainer">
-            <table id="kundentabelle">
+    <div class="tab" id="wiedervolgage">
+        <h1>Wiedervolgage</h1>
 
+    </div>
+    <div class="tab" id="gesellschaft">
+        <h1>Gesellschaft</h1>
+
+    </div>
+
+    <hr>
+
+    <div id="tabellenContainer">
+        <table id="kundentabelle">
+            <thead>
                 <tr>
                     <th>Nachname</th>
                     <th>Vorname</th>
@@ -111,118 +116,118 @@
                     <th>Ort</th>
                     <th>Straße</th>
                 </tr>
+            </thead>
+        </table>
 
-            </table>
-
-        </div>
-
-
-        <!--Dialog Modal-->
-        <dialog id="ModalAddCustomer" class="ModalAddCustomer">
-            <h1>Kunde hinzufügen</h1>
-            <hr>
-
-            <form action="php/addCustomer.php" method="post">
-                <div>
-                    <table class="tableModalAddCustomer">
-                        <tr class="trModalAddCustomer">
-
-                            <th class="thModalAddCustomer">
-                                <label for="anrede">Anrede</label>
-                                <br>
-                                <select type="text" id="anrede" name="anrede">
-                                    <option value="" disabled selected hidden>Bitte auswählen</option>
-                                    <option value="herr">Herr</option>
-                                    <option value="frau">Frau</option>
-                                    <option value="divers">Divers</option>
-                                </select>
-
-                            </th>
-                            <th class="thModalAddCustomer">
-                                <label for="title">Titel</label>
-                                <br>
-                                <input type="text" id="titel" name="titel" placeholder="Mag.">
-                            </th>
-                            <th class="thModalAddCustomer">
-                                <label for="vname">Vorname</label>
-                                <br>
-                                <input type="text" id="vname" name="vname" placeholder="Max">
-
-                            </th>
-                            <th class="thModalAddCustomer">
-                                <label for="nname">Nachname</label>
-                                <br>
-                                <input type="text" id="nname" name="nname" placeholder="Mustermann">
-                            </th>
-                            <th class="thModalAddCustomer">
-                                <label for="geb">Geburtsdatum</label>
-                                <br>
-                                <input type="date" id="geb" name="geb">
-
-
-                        </tr class="trModalAddCustomer">
-
-                        <th class="thModalAddCustomer">
-                            <label for="plz">PLZ</label>
-                            <br>
-                            <input type="number" id="plz" name="plz" placeholder="1220">
-                        </th>
-                        <th class="thModalAddCustomer">
-                            <label for="ort">Ort</label>
-                            <br>
-                            <input type="text" id="ort" name="ort" placeholder="Wien">
-                        </th>
-                        <th class="thModalAddCustomer">
-                            <label for="str">Straße</label>
-                            <br>
-                            <input type="text" id="str" name="str" placeholder="Musterstraße 1">
-                        </th>
-                        <th class="thModalAddCustomer">
-                            <label for="hausnr">Hausnummer</label>
-                            <br>
-                            <input type="text" id="hausnr" name="hausnr" placeholder="12a">
-                        </th>
-                        <th class="thModalAddCustomer" id="tuernr">
-                            <label for="tuernr">Stg/Tür</label>
-                            <br>
-                            <input type="text" id="tuernr" name="tuernr" placeholder="2/4">
-                        </th>
-
-
-                        <tr class="trModalAddCustomer">
-                            <th class="thModalAddCustomer">
-                                <label for="tel">Telefonnummer</label>
-                                <br>
-                                <input type="tel" id="tel" name="tel" placeholder="+4306601234567">
-
-                            </th>
-                            <th class="thModalAddCustomer">
-                                <label for="email">E-Mail</label>
-                                <br>
-                                <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at">
-
-                            </th>
-                            <th class="thModalAddCustomer">
-                                <div class="notiz">
-                                    <label for="notiz">Zusätzliche Information</label><br>
-                                    <textarea id="notiz" name="notiz"></textarea>
-                                </div>
-                            </th>
-
-                        </tr>
-                    </table>
-
-                </div>
-
-                <div class="btnContainer">
-                    <button id="close-dialog" class="btnModalCancel">Abrechen</button>
-                    <button id="addCustomer" type="submit" value="speichern" class="btnModal">Speichern</button>
-            </form>
     </div>
+
+
+    <!--Dialog Modal-->
+    <dialog id="ModalAddCustomer" class="ModalAddCustomer">
+        <h1>Kunde hinzufügen</h1>
+        <hr>
+
+        <form action="php/addCustomer.php" method="post">
+            <div>
+                <table class="tableModalAddCustomer">
+                    <tr class="trModalAddCustomer">
+
+                        <th class="thModalAddCustomer">
+                            <label for="anrede">Anrede</label>
+                            <br>
+                            <select type="text" id="anrede" name="anrede">
+                                <option value="" disabled selected hidden>Bitte auswählen</option>
+                                <option value="herr">Herr</option>
+                                <option value="frau">Frau</option>
+                                <option value="divers">Divers</option>
+                            </select>
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="title">Titel</label>
+                            <br>
+                            <input type="text" id="titel" name="titel" placeholder="Mag.">
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="vname">Vorname</label>
+                            <br>
+                            <input type="text" id="vname" name="vname" placeholder="Max">
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="nname">Nachname</label>
+                            <br>
+                            <input type="text" id="nname" name="nname" placeholder="Mustermann">
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="geb">Geburtsdatum</label>
+                            <br>
+                            <input type="date" id="geb" name="geb">
+
+
+                    </tr class="trModalAddCustomer">
+
+                    <th class="thModalAddCustomer">
+                        <label for="plz">PLZ</label>
+                        <br>
+                        <input type="number" id="plz" name="plz" placeholder="1220">
+                    </th>
+                    <th class="thModalAddCustomer">
+                        <label for="ort">Ort</label>
+                        <br>
+                        <input type="text" id="ort" name="ort" placeholder="Wien">
+                    </th>
+                    <th class="thModalAddCustomer">
+                        <label for="str">Straße</label>
+                        <br>
+                        <input type="text" id="str" name="str" placeholder="Musterstraße 1">
+                    </th>
+                    <th class="thModalAddCustomer">
+                        <label for="hausnr">Hausnummer</label>
+                        <br>
+                        <input type="text" id="hausnr" name="hausnr" placeholder="12a">
+                    </th>
+                    <th class="thModalAddCustomer" id="tuernr">
+                        <label for="tuernr">Stg/Tür</label>
+                        <br>
+                        <input type="text" id="tuernr" name="tuernr" placeholder="2/4">
+                    </th>
+
+
+                    <tr class="trModalAddCustomer">
+                        <th class="thModalAddCustomer">
+                            <label for="tel">Telefonnummer</label>
+                            <br>
+                            <input type="tel" id="tel" name="tel" placeholder="+4306601234567">
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <label for="email">E-Mail</label>
+                            <br>
+                            <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at">
+
+                        </th>
+                        <th class="thModalAddCustomer">
+                            <div class="notiz">
+                                <label for="notiz">Zusätzliche Information</label><br>
+                                <textarea id="notiz" name="notiz"></textarea>
+                            </div>
+                        </th>
+
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="btnContainer">
+                <button id="close-dialog" class="btnModalCancel">Abrechen</button>
+                <button id="addCustomer" type="submit" value="speichern" class="btnModal">Speichern</button>
+        </form>
+        </div>
     </dialog>
 
     <!--Gesellschaften-->
-    
+
 
 </body>
 <script src="js/myFetch.js"></script>

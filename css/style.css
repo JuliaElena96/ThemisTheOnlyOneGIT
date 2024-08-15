@@ -13,6 +13,17 @@ body {
     --navbar-height: 220px;
     /* Definieren Sie eine Variable für die Höhe */
 }
+.n_top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 1;
+    z-index: -1;
+}
 
 .n_top {
     width: 100%;
@@ -33,6 +44,7 @@ body {
     /* Seitenverhältnis beibehalten */
     margin-right: 30px;
 }
+
 
 .navContainer {
     position: fixed;
@@ -107,9 +119,18 @@ body {
 
 .tab {
     display: none;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+
+
 }
 .tab.active {
     display: block;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+
 }
 .tab-buttons {
     display: flex;
@@ -159,10 +180,6 @@ body {
     padding-right: 30px;
     padding-top: 10px;
     font-size: 20px;
-
-
-
-
 }
 
 .welcome h1 {
@@ -177,6 +194,7 @@ body {
     align-items: center;
     width: 50%;
     margin: auto;
+    
    }
 
 .addCustomer button {
@@ -199,6 +217,8 @@ body {
 .suchcontainer {
     width: 50%;
     margin: auto;
+    
+    
 }
 
 .suchcontainer p {
@@ -230,13 +250,12 @@ body {
 }
 
 hr {
-
-    clear: both;
+    position: fixed;
     width: 80%;
-    margin: 30px auto;
     color: #241c23;
-
-
+    left: 50%;
+    transform: translate(-50%);
+    top: 60%;
 }
 
 button {
@@ -256,19 +275,19 @@ button:hover {
 #kundentabelle {
     display: block;
     margin: 50px auto;
-    /* Zentriert die Tabelle horizontal */
-    width: 80%;
-    /* Breite der Tabelle (kann angepasst werden) */
+    width: 100%;
     border-collapse: collapse;
     visibility: hidden;
-
-
+    height: 300px;
+    overflow-y: auto; 
+}
+thead{
+position: relative;
 }
 
 table,
 th,
 td {
-
     border-collapse: collapse;
 
 }
@@ -282,7 +301,24 @@ td {
     width: 250px;
 }
 
-#tabellenContainer {}
+
+#tabellenContainer {
+    height: 250px;
+    margin: 350px auto 50px auto;
+    width: 80%;
+    
+}
+#tabellenContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#tabellenContainer table th {
+    background-color: #241c23;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 
 .kundenansicht {
     border: none;
@@ -303,6 +339,6 @@ td {
 }
 
 .tableRow:hover {
-    background-color: #241c23;
-    color: white;
+    background-color: #cc728c;
+    
 }

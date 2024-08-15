@@ -1,11 +1,10 @@
 function removeTableRows() {
-    //Löscht die vorherige Tabelle
+    // Löscht die vorherige Tabelle
     let previousRows = document.getElementsByClassName('tableRow');
     for (let i = previousRows.length - 1; i >= 0; i--) {
         previousRows[i].remove();
     }
 }
-
 
 function seperateValues(dataObj) {
     let nname = "";
@@ -17,23 +16,19 @@ function seperateValues(dataObj) {
 
     console.log("start seperateValues");
 
-    //Objekt in einen Sting umwandeln
+    // Objekt in einen String umwandeln
     let myJSON = JSON.stringify(dataObj);
 
     // String an Kommas aufteilen
     let array = myJSON.split(",");
-
 
     // Über das resultierende Array iterieren
     for (let i = 0; i < array.length; i++) {
         // Jedes Element an den Doppelpunkten aufteilen
         let keyValueSeparator = array[i].split(":");
 
-
-
         // Über das resultierende Array iterieren
         for (let j = 0; j < keyValueSeparator.length; j++) {
-
             if (i === 0) {
                 nname = keyValueSeparator[1].replace(/[\[\]{}""]/g, '');
             }
@@ -52,32 +47,32 @@ function seperateValues(dataObj) {
             if (i === 5) {
                 str = keyValueSeparator[1].replace(/[\[\]{}""]/g, '');
             }
-
         }
-
-
     }
-    /*console.log("Nachname: ", nname);
-    console.log("Vorname: ", vname);
-    console.log("Geburtstag: ", geb);
-    console.log("PLZ: ", plz);
-    console.log("Ort: ", ort);
-    console.log("Str: ", str);*/
-
 
     AddRow(nname, vname, geb, plz, ort, str);
-
 }
 
 let table = document.getElementById('kundentabelle');
-let thead = document.createElement('thead');
-let tbody = document.createElement('tbody');
+if (table) {
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
 
-table.appendChild(thead);
-table.appendChild(tbody);
-document.getElementById('tabellenContainer').appendChild(table);
+    table.appendChild(thead);
+    table.appendChild(tbody);
 
-//Tabelle erstellen
+    let container = document.getElementById('tabellenContainer');
+    if (container) {
+        container.appendChild(table);
+    } else {
+        console.error('Container element not found');
+    }
+} else {
+    console.error('Table element not found');
+}
+
+
+// Tabelle erstellen
 function AddRow(nname, vname, geb, plz, ort, str) {
     console.log("start AddRow");
 
@@ -85,7 +80,7 @@ function AddRow(nname, vname, geb, plz, ort, str) {
     newRow.setAttribute("class", "tableRow");
 
     let link = document.createElement('a');
-    link.href = "kundenmaske.html";
+    link.href = "php/kundenmaske.php";
     link.style.display = "contents"; // Damit das <a>-Tag die gesamte Zeile umschließt
 
     let nachname = document.createElement('td');
@@ -114,5 +109,11 @@ function AddRow(nname, vname, geb, plz, ort, str) {
     link.appendChild(straße);
 
     newRow.appendChild(link);
-    tbody.appendChild(newRow);
+
+    let tbody = document.querySelector('#kundentabelle tbody');
+    if (tbody) {
+        tbody.appendChild(newRow);
+    } else {
+        console.error('Tbody element not found');
+    }
 }

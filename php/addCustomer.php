@@ -1,16 +1,5 @@
 <?php
-// Datenbankverbindung aufbauen
-$host = "localhost";
-$dbName = "themis";
-$username = "root";
-$password = "";
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $e->getMessage());
-}
+include 'dbManager.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    

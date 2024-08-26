@@ -23,34 +23,28 @@
     position: fixed;
 }
 
-.stammdatenContainer {
-    display: flex;
-    flex-direction: column;
-    /* Flexbox-Richtung auf Spalte setzen */
-    margin: 50px auto;
-    width: 100%;
-    border-collapse: collapse;
+#stammdaten {
+    width: 70%;
+    margin: auto;
 }
+
+.stammdatenContainer {
+    width: 110%;
+    margin: 50px auto;
+    padding-left: 230px;
+  }
 
 .stammdatenContainer .tables {
     display: flex;
     justify-content: space-between;
-
-    /* Platz zwischen den Tabellen */
-    width: 95%;
 }
 
+
 #containerForBtn {
-    display: flex;
-    justify-content: flex-end;
-    /* Korrigiert von 'right' zu 'flex-end' */
-    align-items: center;
-    margin-top: 5%;
-    padding-right: 20px;
-    width: 82%;
-    /* Breite auf 100% setzen */
-    box-sizing: border-box;
-    /* Damit Padding und Border in der Breite berücksichtigt werden */
+    text-align: right;
+    width: 110%;
+    margin: 50px auto;
+    padding-left: 230px;
 }
 
 button {
@@ -67,10 +61,13 @@ button:first-child {
     /* Jede Tabelle nimmt etwa die Hälfte des Containers ein */
 
 }
+
 .stammdatenContainer table:first-child,
 .stammdatenContainer label {
     font-weight: bold;
+    
 }
+
 
 .stammdatenContainer table,
 .stammdatenContainer tr,
@@ -93,6 +90,7 @@ button:first-child {
 .stammdatenContainer input {
     padding-left: 5px;
     margin: 5px auto 5px 5px;
+    
 
 }
 
@@ -108,9 +106,8 @@ button:first-child {
 }
 
 #vname,
-#nname
-{
-width: 420px;
+#nname {
+    width: 420px;
 }
 
 #geb {
@@ -120,9 +117,15 @@ width: 420px;
 #sozialvnr {
     width: 240px;
 }
-#str{
+
+#str {
     width: 250px;
 }
-#hausnr, #tuernr{
+
+#hausnr,
+#tuernr {
     width: 70px;
+}
+#tel1 , #tel2 , #email, #beruf, #bank, #iban, #bic {
+    width: 420px;
 }

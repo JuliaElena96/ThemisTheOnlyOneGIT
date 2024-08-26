@@ -1,4 +1,6 @@
-<?php include 'showCustomer.php'; ?>
+<?php
+include 'showCustomer.php';
+?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -99,7 +101,7 @@
                         </td>
                     </tr>
                     <tr>
-                    <td><label for="land">Land</label> /
+                        <td><label for="land">Land</label> /
                             <label for="staatsbuergerschaft">Staatsbürgerschaft</label>
                         </td>
                         <td>

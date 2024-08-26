@@ -13,6 +13,7 @@ body {
     --navbar-height: 220px;
     /* Definieren Sie eine Variable für die Höhe */
 }
+
 .n_top::before {
     content: "";
     position: absolute;
@@ -119,31 +120,29 @@ body {
 
 .tab {
     display: none;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-
-
 }
+
 .tab.active {
     display: block;
-    left: 50%;
     width: 100%;
-    transform: translate(-50%);
+
 
 }
+
 .tab-buttons {
     display: flex;
     justify-content: space-around;
     background-color: #f1f1f1;
     padding: 10px;
 }
+
 .tab-buttons button {
     background-color: #ddd;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
+
 .tab-buttons button.active {
     background-color: #ccc;
 }
@@ -194,8 +193,8 @@ body {
     align-items: center;
     width: 50%;
     margin: auto;
-    
-   }
+
+}
 
 .addCustomer button {
     width: 60px;
@@ -211,14 +210,11 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 35px;
-
 }
 
 .suchcontainer {
     width: 50%;
     margin: auto;
-    
-    
 }
 
 .suchcontainer p {
@@ -232,7 +228,6 @@ body {
     margin: 0px;
     padding-right: 15px;
     margin-bottom: 30px;
-
 }
 
 .eingabefeld input {
@@ -250,12 +245,9 @@ body {
 }
 
 hr {
-    position: fixed;
     width: 80%;
     color: #241c23;
-    left: 50%;
-    transform: translate(-50%);
-    top: 60%;
+
 }
 
 button {
@@ -279,17 +271,19 @@ button:hover {
     border-collapse: collapse;
     visibility: hidden;
     height: 300px;
-    overflow-y: auto; 
+    overflow-y: scroll;   
 }
-thead{
-position: relative;
+
+thead {
+   position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 table,
 th,
 td {
     border-collapse: collapse;
-
 }
 
 th,
@@ -304,20 +298,19 @@ td {
 
 #tabellenContainer {
     height: 250px;
-    margin: 350px auto 50px auto;
+    margin: 70px auto;
     width: 80%;
     
 }
+
 #tabellenContainer table {
     width: 100%;
     border-collapse: collapse;
 }
+
 #tabellenContainer table th {
     background-color: #241c23;
     color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 .kundenansicht {
@@ -330,15 +323,11 @@ td {
     visibility: hidden;
 }
 
-
-
 .tableRow a {
     color: inherit;
     text-decoration: none;
-    /* Entfernt die Unterstreichung */
 }
 
 .tableRow:hover {
     background-color: #cc728c;
-    
 }

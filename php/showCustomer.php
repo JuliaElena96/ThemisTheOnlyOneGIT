@@ -1,18 +1,7 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
 
-$host = "localhost";
-$dbName = "themis";
-$username = "root";
-$password = "";
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->exec("SET NAMES 'utf8'");
-} catch (PDOException $e) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $e->getMessage());
-}
+include 'dbManager.php';
 
 
 $sql = "SELECT anrede, titel, vname, nname, str, hausnr, tuernr, plz, ort, 
@@ -47,4 +36,3 @@ if ($row) {
 } else {
     echo "Keine Daten gefunden";
 }
-?>

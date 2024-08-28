@@ -39,11 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             function receiveTextData(dataText) {
                 console.log(`receiveTextData : ${dataText}`);
-                dataObj = JSON.parse(dataText);
+                try {
+                    let dataObj = JSON.parse(dataText);
+                    receiveJsonData(dataObj);
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                    receiveError(error);
+                }
             }
 
             function receiveError(error) {
                 console.error(`Error: ${error}`);
+                alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
                 removeTableRows();
             }
         }

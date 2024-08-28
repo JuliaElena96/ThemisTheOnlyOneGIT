@@ -32,7 +32,7 @@
     width: 110%;
     margin: 50px auto;
     padding-left: 230px;
-  }
+}
 
 .stammdatenContainer .tables {
     display: flex;
@@ -65,7 +65,7 @@ button:first-child {
 .stammdatenContainer table:first-child,
 .stammdatenContainer label {
     font-weight: bold;
-    
+
 }
 
 
@@ -90,7 +90,7 @@ button:first-child {
 .stammdatenContainer input {
     padding-left: 5px;
     margin: 5px auto 5px 5px;
-    
+
 
 }
 
@@ -126,6 +126,33 @@ button:first-child {
 #tuernr {
     width: 70px;
 }
-#tel1 , #tel2 , #email, #beruf, #bank, #iban, #bic {
+
+#tel1,
+#tel2,
+#email,
+#beruf,
+#bank,
+#iban,
+#bic {
     width: 420px;
+}
+
+#containerNotizen {
+    width: 110%;
+    margin: auto;
+    padding-left: 230px;
+    
+}
+label[for="notiz"] {
+    font-size: large;
+    font-weight: bold;
+}
+
+textarea {
+    border-radius: 10px;
+    width: 100%;
+    height: 2000px;
+    resize: none;
+    padding: 10px;
+    height: inherit;
 }

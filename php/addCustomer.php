@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $str = !empty($_POST['str']) ? $_POST['str'] : NULL;
     $hausnr = !empty($_POST['hausnr']) ? $_POST['hausnr'] : NULL;
     $tuernr = !empty($_POST['tuernr']) ? $_POST['tuernr'] : NULL;
-    $tel1 = !empty($_POST['tel']) ? $_POST['tel'] : NULL;
+    $tel1 = !empty($_POST['tel1']) ? $_POST['tel1'] : NULL;
     $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
 
        // Validierung der erforderlichen Felder

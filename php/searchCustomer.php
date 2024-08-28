@@ -31,6 +31,7 @@ if (!empty($nname) || !empty($vname) || !empty($plz) || !empty($ort)) {
                 'PLZ' =>  $row['plz'],
                 'Ort' => $row['ort'],
                 'Str' => $row['str'],
+                'KundenID' => $row['kundenID']
             ];
             $cnt++;
         }

@@ -2,13 +2,14 @@
 
 
 include 'dbManager.php';
-
+//Default Wert für KundenID 1
+$kundenID = isset($_GET['kundenID']) ? $_GET['kundenID'] : 1;
 
 $sql = "SELECT anrede, titel, vname, nname, str, hausnr, tuernr, plz, ort, 
 land, staatsbuergerschaft, geb, sozialvnr, tel1,tel2, email, beruf, bank, iban, bic
- FROM kunden WHERE kundenID = 1"; // Passen Sie die Abfrage nach Bedarf an
+ FROM kunden WHERE kundenID = ?"; 
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt->execute([$kundenID]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $anrede = $titel = $vname = $nname = $str = "";
@@ -33,6 +34,8 @@ if ($row) {
     $bank = $row["bank"];
     $iban = $row["iban"];
     $bic = $row["bic"];
+  
+
 } else {
     echo "Keine Daten gefunden";
 }

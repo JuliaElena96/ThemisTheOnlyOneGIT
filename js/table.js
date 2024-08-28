@@ -13,6 +13,7 @@ function seperateValues(dataObj) {
     let plz = "";
     let ort = "";
     let str = "";
+    let kundenID = "";
 
     console.log("start seperateValues");
 
@@ -47,10 +48,13 @@ function seperateValues(dataObj) {
             if (i === 5) {
                 str = keyValueSeparator[1].replace(/[\[\]{}""]/g, '');
             }
+            if (i === 6) {
+                kundenID = keyValueSeparator[1].replace(/[\[\]{}""]/g, '');
+            }
         }
     }
 
-    AddRow(nname, vname, geb, plz, ort, str);
+    AddRow(nname, vname, geb, plz, ort, str, kundenID);
 }
 
 let table = document.getElementById('kundentabelle');
@@ -73,14 +77,14 @@ if (table) {
 
 
 // Tabelle erstellen
-function AddRow(nname, vname, geb, plz, ort, str) {
+function AddRow(nname, vname, geb, plz, ort, str, kundenID) {
     console.log("start AddRow");
 
     let newRow = document.createElement("tr");
     newRow.setAttribute("class", "tableRow");
 
     let link = document.createElement('a');
-    link.href = "php/kundenmaske.php";
+    link.href = `php/kundenmaske.php?kundenID=${kundenID}`;
     link.style.display = "contents"; // Damit das <a>-Tag die gesamte Zeile umschließt
 
     let nachname = document.createElement('td');

@@ -1,37 +1,16 @@
-#stammdaten {
-    width: 70%;
-    margin: auto;
-    position: fixed;
-
-}
-
-#vertraegeKunde {
-    width: 70%;
-    margin: auto;
-    position: fixed;
-}
-
-#dokumente {
-    width: 70%;
-    margin: auto;
-    position: fixed;
-}
-
+#stammdaten,
+#vertraegeKunde,
+#dokumente,
 #beziehungen {
     width: 70%;
     margin: auto;
-    position: fixed;
-}
-
-#stammdaten {
-    width: 70%;
-    margin: auto;
+    position: relative; 
 }
 
 .stammdatenContainer {
     width: 110%;
-    margin: 50px auto;
-    padding-left: 230px;
+    margin-top: 50px auto;
+
 }
 
 .stammdatenContainer .tables {
@@ -42,9 +21,9 @@
 
 #containerForBtn {
     text-align: right;
-    width: 110%;
+    width: 100%;
     margin: 50px auto;
-    padding-left: 230px;
+    padding-left: 30px;
 }
 
 button {
@@ -139,8 +118,8 @@ button:first-child {
 
 #containerNotizen {
     width: 110%;
-    margin: auto;
-    padding-left: 230px;
+    margin: 30px auto;
+    
     
 }
 label[for="notiz"] {
@@ -150,9 +129,23 @@ label[for="notiz"] {
 
 textarea {
     border-radius: 10px;
-    width: 100%;
+    font-size: large;
+    width: 98%;
     height: 2000px;
     resize: none;
     padding: 10px;
     height: inherit;
+}
+
+/* Responsive styles for screens smaller than 1300px */
+@media (max-width: 2000px) {
+    .stammdatenContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stammdatenContainer table {
+        width: 100%;
+        
+    }
 }

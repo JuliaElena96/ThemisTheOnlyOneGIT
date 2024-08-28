@@ -19,3 +19,25 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('close-dialog or ModalAddCustomer not found');
     }
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+    const modal = document.getElementById("ModalAddCustomer");
+    const resizer = document.querySelector('.resizer');
+    const modalContent = modal;
+
+    resizer.addEventListener('mousedown', initResize, false);
+
+    function initResize(e) {
+        window.addEventListener('mousemove', Resize, false);
+        window.addEventListener('mouseup', stopResize, false);
+    }
+
+    function Resize(e) {
+        modalContent.style.width = (e.clientX - modalContent.offsetLeft) + 'px';
+        modalContent.style.height = (e.clientY - modalContent.offsetTop) + 'px';
+    }
+
+    function stopResize(e) {
+        window.removeEventListener('mousemove', Resize, false);
+        window.removeEventListener('mouseup', stopResize, false);
+    }
+});

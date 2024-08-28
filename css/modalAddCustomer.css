@@ -1,9 +1,21 @@
 .ModalAddCustomer {
     border-radius: 10px;
     padding-top: 0px;
-    height: 43%;
-    width: 55%;
+    height: 50%;
+    width: 65%;
     text-align: center;
+    resize: both;
+    overflow: auto;
+}
+
+.resizer {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: se-resize;
 }
 
 .btnContainer {

@@ -279,6 +279,21 @@ create table if not exists hat(
     foreign key (gesID) references t_gesellschaft (gesID),
     foreign key (notizID) references notizen (notizID)
 );
+
+CREATE TABLE IF NOT EXISTS `dokumente` (
+    dokumentID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    kundenID INT,
+    vertragsID INT,
+    dokumentName VARCHAR(255),
+    dokumentTyp VARCHAR(50),
+    dokumentPfad VARCHAR(255),
+    erstellungsDatum DATE,
+    beschreibung VARCHAR(255),
+    FOREIGN KEY (kundenID) REFERENCES kunden(kundenID),
+    FOREIGN KEY (vertragsID) REFERENCES vertrag_allg(vertragsID)
+);
+
+
 INSERT INTO Kunden 
 (anrede, titel, nname, vname, geb, sozialvnr, famstand, tel1, tel2, email, plz, ort, land, staatsbuergerschaft, str, hausnr, tuernr, beruf, bank, iban, bic)
 VALUES

@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
        // Validierung der erforderlichen Felder
        if (empty($nname) || empty($vname) || empty($geb) || empty($plz) || empty($ort) || empty($str)) {
-        echo "<script>alert('FEHLER:! Bitte füllen Sie alle erforderlichen Felder aus: Nachname, Vorname, Geburtstag, PLZ, Ort, Straße.'); window.history.back();</script>";
+        echo "<script>alert('Bitte füllen Sie alle erforderlichen Felder aus: Nachname, Vorname, Geburtstag, PLZ, Ort, Straße.'); window.history.back();</script>";
         exit;
     }
    

@@ -2,8 +2,12 @@
 
 
 include 'dbManager.php';
-//Default Wert für KundenID 1
-$kundenID = isset($_GET['kundenID']) ? $_GET['kundenID'] : 1;
+if (isset($_GET['kundenID'])) {
+    $kundenID = $_GET['kundenID'];
+} else {
+    echo "Keine Kunden-ID übergeben.";
+    exit; // Skript beenden, wenn keine ID übergeben wurde
+}
 
 $sql = "SELECT anrede, titel, vname, nname, str, hausnr, tuernr, plz, ort, 
 land, staatsbuergerschaft, geb, sozialvnr, tel1,tel2, email, beruf, bank, iban, bic

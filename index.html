@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/modalAddCustomer.css" type="text/css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
 
@@ -25,9 +23,8 @@
     <!-- Navbar -->
     <div class="n_top">
         <div class="navContainer">
-            <img id="logo" src="pic/LogoCutted.png" alt="Themis Logo" onclick="window.location.reload();">
+            <img id="logo" src="pic/LogoCutted.png" alt="Themis Logo" onclick="window.location.href='index.html';">
             <ul id="navlist">
-                
                 <li><a href="#" class="tab-button" data-tab="kunde">Kunde</a></li>
                 <li><a href="#" class="tab-button" data-tab="vertraege">Verträge</a></li>
                 <li><a href="#" class="tab-button" data-tab="wiedervolgage">Wiedervolgage</a></li>
@@ -149,18 +146,18 @@
                             <input type="text" id="titel" name="titel" placeholder="Mag.">
                         </th>
                         <th class="thModalAddCustomer">
-                            <label for="vname">Vorname</label>
+                            <label for="vname">Vorname *</label>
                             <br>
                             <input type="text" id="vname" name="vname" placeholder="Max">
 
                         </th>
                         <th class="thModalAddCustomer">
-                            <label for="nname">Nachname</label>
+                            <label for="nname">Nachname *</label>
                             <br>
                             <input type="text" id="nname" name="nname" placeholder="Mustermann">
                         </th>
                         <th class="thModalAddCustomer">
-                            <label for="geb">Geburtsdatum</label>
+                            <label for="geb">Geburtsdatum *</label>
                             <br>
                             <input type="date" id="geb" name="geb">
 
@@ -168,17 +165,17 @@
                     </tr class="trModalAddCustomer">
 
                     <th class="thModalAddCustomer">
-                        <label for="plz">PLZ</label>
+                        <label for="plz">PLZ *</label>
                         <br>
                         <input type="number" id="plz" name="plz" placeholder="1220">
                     </th>
                     <th class="thModalAddCustomer">
-                        <label for="ort">Ort</label>
+                        <label for="ort">Ort*</label>
                         <br>
                         <input type="text" id="ort" name="ort" placeholder="Wien">
                     </th>
                     <th class="thModalAddCustomer">
-                        <label for="str">Straße</label>
+                        <label for="str">Straße *</label>
                         <br>
                         <input type="text" id="str" name="str" placeholder="Musterstraße 1">
                     </th>
@@ -207,7 +204,7 @@
                             <input type="email" id="email" name="email" placeholder="beispiel@beispiel.at">
 
                         </th>
-                       
+
 
                     </tr>
                 </table>
@@ -217,10 +214,10 @@
             <div class="btnContainer">
                 <button id="close-dialog" class="btnModalCancel">Abrechen</button>
                 <button id="addCustomer" type="submit" value="speichern" class="btnModal">Speichern</button>
-        
-        </div>
-    </form>
-    <div class="resizer"></div>
+
+            </div>
+        </form>
+        <div class="resizer"></div>
     </dialog>
 
     <!--Gesellschaften-->
